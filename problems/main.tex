@@ -148,7 +148,7 @@ Do you think the restaurant is being truthful about the average calorie count in
 \end{example}
 
 \begin{example}
-A potato chips company claims that on average their package contains 200 grams of potato chips. Based on the many years of testing, it is known that the population standard deviation is 10 grams and the amounts are normally distributed. Suppose that the company headquarters suspects that the manufacturer is routinely under-filling the packs of chips to cut the production cost. The company headquarters sends an inspector to the plant to find out what’s going on. The inspector picks up 25 random bags of potato chips from conveyor and finds out that the average weight of bags is 195 grams. 
+A potato chips company claims that on average their package contains 200 grams of potato chips. Based on the many years of testing, it is known that the population standard deviation is 10 grams and the amounts are normally distributed. Suppose that the company headquarters suspects that the manufacturer is routinely under-filling the packs of chips to cut the production cost. The company headquarters sends an inspector to the plant to find out what’s going on. The inspector takes a random sample of 25 bags of chips and finds out that the average weight is 195 grams. 
 
 \begin{question}
 Please determine the value of standard deviation for the sampling distribution:
@@ -157,16 +157,16 @@ $$\mbox{St. dev. for sampling distribution:}\quad\sigma_{\bar{x}}= \answer{2}$$
 
 \begin{question}
 Please chose the correct graph for the sampling distribution:
-\begin{image}
-    \begin{tabular}{cc}
+\begin{multipleChoice}
+\choice[correct]{
       \begin{tikzpicture}
         \begin{axis}[
-          domain=196:204,
-          xmin=196, xmax=204,
-          ymin=-0.01, ymax=0.03,
-          width=2.5in,
-          xtick={196, 198,200,202,204},
-            xticklabels={$196$,$198$,$200$, $202$,$204$},
+          domain=190:210,
+          xmin=190, xmax=210,
+          ymin=-0.01, ymax=0.3,
+          width=3.5in,
+          xtick={194,196, 198, 200, 202, 204, 206},
+            xticklabels={$194$,$196$,$198$,$200$,$202$,$204$,$206$},
            % ytick style={draw=none},
             %yticklabels={},
             axis x line=center,
@@ -175,134 +175,175 @@ Please chose the correct graph for the sampling distribution:
           %every axis y label/.style={at=(current axis.above origin),anchor=south},
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
-      \addplot [very thick,  smooth] {(e^((-(x-200)^2)/(2*2.5^2)))/(2*pi*2.5^2)};
-          \node at (axis cs:196, 0.025 ) [anchor=west] {$A$};
+      \addplot [very thick,  smooth] {(e^(-0.5*((x-200)/2)^2))/(((2*pi)^0.5)*2)};
+      %    \node at (axis cs:320, 0.025 ) [anchor=west] {$A$};
           \end{axis}
         \end{tikzpicture}
-      &
-      \begin{tikzpicture}
+}
+\choice{
+       \begin{tikzpicture}
         \begin{axis}[
-          domain=-2:2,
-          xmin=-2, xmax=2,
-          ymin=-2, ymax=2,
-          width=2.5in,
-          axis lines =middle, xlabel=$x$, ylabel=$y$,
-          every axis y label/.style={at=(current axis.above origin),anchor=south},
-          every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          domain=185:205,
+          xmin=185, xmax=205,
+          ymin=-0.01, ymax=0.3,
+          width=3.5in,
+          xtick={189,191, 193, 195, 197, 199, 201},
+            xticklabels={$189$,$191$,$193$,$195$,$197$,$199$,$201$},
+           % ytick style={draw=none},
+            %yticklabels={},
+            axis x line=center,
+            axis y line=none,
+          %axis lines =middle, xlabel={}, ylabel={},
+          %every axis y label/.style={at=(current axis.above origin),anchor=south},
+           every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
-      \addplot [very thick,  smooth] {-5*x^5+5*x^4+5*x^3-4.25*x^2-.3*x +.5};
-          \node at (axis cs:1.2, 1 ) [anchor=west] {$B$};
-        \end{axis}
-      \end{tikzpicture}\\
-      \begin{tikzpicture}
+      \addplot [very thick,  smooth] {(e^(-0.5*((x-195)/2)^2))/(((2*pi)^0.5)*2)};
+      %    \node at (axis cs:320, 0.025 ) [anchor=west] {$A$};
+          \end{axis}
+        \end{tikzpicture}
+        }
+\choice{
+        \begin{tikzpicture}
         \begin{axis}[
-          domain=-2:2,
-          xmin=-2, xmax=2,
-          ymin=-2, ymax=2,
-          width=2.5in,
-          axis lines =middle, xlabel=$x$, ylabel=$y$,
-          every axis y label/.style={at=(current axis.above origin),anchor=south},
-          every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          domain=160:240,
+          xmin=160, xmax=240,
+          ymin=-0.01, ymax=0.3,
+          width=3.5in,
+          xtick={170,180, 190, 200, 210, 220, 230},
+            xticklabels={$170$,$180$,$190$,$200$,$210$,$220$,$230$},
+           % ytick style={draw=none},
+            %yticklabels={},
+            axis x line=center,
+            axis y line=none,
+          %axis lines =middle, xlabel={}, ylabel={},
+          %every axis y label/.style={at=(current axis.above origin),anchor=south},
+           every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
-      \addplot [very thick, smooth] {5*x^6-5*x^5-5*x^4+5*x^3+x^2 -.5};
-          \node at (axis cs:1.2, 1 ) [anchor=west] {$C$};
-        \end{axis}
-      \end{tikzpicture}
-      &
-      \begin{tikzpicture}
+      \addplot [very thick,  smooth] {(e^(-0.5*((x-200)/10)^2))/(((2*pi)^0.5)*2)};
+      %    \node at (axis cs:320, 0.025 ) [anchor=west] {$A$};
+          \end{axis}
+        \end{tikzpicture}
+        }
+\choice{
+\begin{tikzpicture}
         \begin{axis}[
-          domain=-2:2,
-          xmin=-2, xmax=2,
-          ymin=-2, ymax=2,
-          width=2.5in,
-          axis lines =middle, xlabel=$x$, ylabel=$y$,
-          every axis y label/.style={at=(current axis.above origin),anchor=south},
-          every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          domain=160:230,
+          xmin=160, xmax=230,
+          ymin=-0.01, ymax=0.3,
+          width=3.5in,
+          xtick={165, 175, 185, 195, 205, 215, 225},
+            xticklabels={$165$,$175$,$185$,$195$,$205$,$215$,$225$},
+           % ytick style={draw=none},
+            %yticklabels={},
+            axis x line=center,
+            axis y line=none,
+          %axis lines =middle, xlabel={}, ylabel={},
+          %every axis y label/.style={at=(current axis.above origin),anchor=south},
+           every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
-      \addplot [very thick, smooth,samples=100] {-5*x^6+5*x^5+5*x^4-5*x^3-x^2+1.5*x+1};
-          \node at (axis cs:1.2, 1 ) [anchor=west] {$D$};
-        \end{axis}
-      \end{tikzpicture}
-    \end{tabular}
-  \end{image}
-
+      \addplot [very thick,  smooth] {(e^(-0.5*((x-195)/10)^2))/(((2*pi)^0.5)*2)};
+      %    \node at (axis cs:320, 0.025 ) [anchor=west] {$A$};
+          \end{axis}
+        \end{tikzpicture}
+}
+        
+\end{multipleChoice}
 \end{question}
+
+\begin{question}
+Assuming that the potato chips company does put 200g of potato chips in a bag, on average, what is the probability of obtaining a sample of 25 bags that, on average, contain 198g per bag?
+\begin{multipleChoice}
+\choice{approximately $68\%$}
+\choice[correct]{approximately $16\%$}
+\choice{approximately $99.7\%$}
+\choice{approximately $3.4\%$}
+\end{multipleChoice}
+\end{question}
+
+% \begin{question}
+% Is the potato chips company telling the truth about having 200 grams of chips in a bag?
+% \begin{multipleChoice}
+% \choice{Yes}
+% \choice[correct]{No}
+% \end{multipleChoice}
+% \end{question}
+
 \end{example}
 
 
 
-\begin{example}
-Suppose a company manufactures snack bars. The company claims that the average wight of their granola bar is 130 grams and it's known that the population standard deviation is 6. After a routine check a mechanic stated that the machine might be broken and the weight of the granola bar is definitely not 130 grams. The company decided to test mechanics claim and took a random sample of 36 granola bars. The average weight turned out to be 133 grams.
+% \begin{example}
+% Suppose a company manufactures snack bars. The company claims that the average wight of their granola bar is 130 grams and it's known that the population standard deviation is 6. After a routine check a mechanic stated that the machine might be broken and the weight of the granola bar is definitely not 130 grams. The company decided to test mechanics claim and took a random sample of 36 granola bars. The average weight turned out to be 133 grams.
 
-\begin{question}
-Please determine the value of standard deviation for the sampling distribution:
-$$\mbox{St. dev. for sampling distribution:}\quad\sigma_{\bar{x}}= \answer{1}$$
-\end{question}
+% \begin{question}
+% Please determine the value of standard deviation for the sampling distribution:
+% $$\mbox{St. dev. for sampling distribution:}\quad\sigma_{\bar{x}}= \answer{1}$$
+% \end{question}
 
-\begin{question}
-What is the acceptable range of the weight of the granola bar:
-If we were to take thousands of samples each containing 36 bars, approximately $68\%$ of the samples would lie in what range?
+% \begin{question}
+% What is the acceptable range of the weight of the granola bar:
+% If we were to take thousands of samples each containing 36 bars, approximately $68\%$ of the samples would lie in what range?
 
-\begin{hint}
-Use the Empirical rule.
-\end{hint}
-\begin{multipleChoice}
-\choice[correct]{129 - 131 grams}
-\choice{124 - 136 grams}
-\choice{128 - 132 grams}
-\choice{127 - 133 grams}
-\end{multipleChoice}
-\end{question}
+% \begin{hint}
+% Use the Empirical rule.
+% \end{hint}
+% \begin{multipleChoice}
+% \choice[correct]{129 - 131 grams}
+% \choice{124 - 136 grams}
+% \choice{128 - 132 grams}
+% \choice{127 - 133 grams}
+% \end{multipleChoice}
+% \end{question}
 
-\begin{question}
-How many standard deviations away from the mean is considered "highly unlikely"?
-\begin{multipleChoice}
-\choice{1 std}
-\choice{2 std}
-\choice[correct]{3 std}
-\end{multipleChoice}
-\end{question}
+% \begin{question}
+% How many standard deviations away from the mean is considered "highly unlikely"?
+% \begin{multipleChoice}
+% \choice{1 std}
+% \choice{2 std}
+% \choice[correct]{3 std}
+% \end{multipleChoice}
+% \end{question}
 
-\begin{question}
-Please specify how likely is the mean of 130 grams per bag to occur:
-\begin{multipleChoice}
-\choice{Likely}
-\choice{Somewhat likely}
-\choice[correct]{Unlikely}
-\end{multipleChoice}
-\end{question}
+% \begin{question}
+% Please specify how likely is the mean of 130 grams per bag to occur:
+% \begin{multipleChoice}
+% \choice{Likely}
+% \choice{Somewhat likely}
+% \choice[correct]{Unlikely}
+% \end{multipleChoice}
+% \end{question}
 
-Sample question.  What is the answer?
-$$\text{Solution: }\answer{4}$$
+% Sample question.  What is the answer?
+% $$\text{Solution: }\answer{4}$$
 
-\end{example}
-
-
-\begin{example}
-Farmer Joe is looking to sell his farm along with animals. Emily is interested in buying the farm. To make the offer sound more appealing, Farmer Joe states that his chicken on average lay 10 eggs per week (with a std of 1), while the national average is only 6 eggs per week. Emily wants to test Joe’s claim and decides to see herself how many eggs Joe's chickens will produce in 1 week. Among 9 Joe's chickens, the average number of eggs per week turned out to be 9.5 . 
-
-\begin{question}
-Please identify the following:
-[I AM CONFUSED MYSELF HERE TO BE HONEST]
-\begin{enumerate}
-    \item $\mu$ (presumed population mean) $= \answer{6}$
-    \item $\sigma$ (population standard deviation) $= \answer{1}$
-    \item $\bar{x}$ (sample mean) $=\answer{9.5}$
-    \item $n$ (sample size) $= \answer{9}$
-\end{enumerate}
-\end{question}
-
-\begin{question}
-How likely is that the Farmer Joe tells the truth about his chickens?
-\begin{multipleChoice}
-\choice{Likely}
-\choice[correct]{Somewhat likely}
-\choice{Unlikely}
-\end{multipleChoice}
-\end{question}
+% \end{example}
 
 
-\end{example}
+% \begin{example}
+% Farmer Joe is looking to sell his farm along with animals. Emily is interested in buying the farm. To make the offer sound more appealing, Farmer Joe states that his chicken on average lay 10 eggs per week (with a std of 1), while the national average is only 6 eggs per week. Emily wants to test Joe’s claim and decides to see herself how many eggs Joe's chickens will produce in 1 week. Among 9 Joe's chickens, the average number of eggs per week turned out to be 9.5 . 
+
+% \begin{question}
+% Please identify the following:
+% [I AM CONFUSED MYSELF HERE TO BE HONEST]
+% \begin{enumerate}
+%     \item $\mu$ (presumed population mean) $= \answer{6}$
+%     \item $\sigma$ (population standard deviation) $= \answer{1}$
+%     \item $\bar{x}$ (sample mean) $=\answer{9.5}$
+%     \item $n$ (sample size) $= \answer{9}$
+% \end{enumerate}
+% \end{question}
+
+% \begin{question}
+% How likely is that the Farmer Joe tells the truth about his chickens?
+% \begin{multipleChoice}
+% \choice{Likely}
+% \choice[correct]{Somewhat likely}
+% \choice{Unlikely}
+% \end{multipleChoice}
+% \end{question}
+
+
+% \end{example}
 
 
 
