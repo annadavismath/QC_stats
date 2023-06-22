@@ -19,36 +19,36 @@ Why not record the width of the room in millimeters?
 Recording measurements in units that are logical helps with visualization of the actual size.  
 Also, know when the unit is linear, squared, or cubed.   Check these images (not to scale):
 
-% \begin{center}
-% \tdplotsetmaincoords{70}{130}
-% 	\begin{tikzpicture}[scale=0.6]
-%  \filldraw[blue, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
-%    \filldraw[blue, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
-%    \filldraw[blue, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
-%    \filldraw[blue, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
-%    \filldraw[blue, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
-% \draw[line width=1pt](0,0,2)--(4,0,2) ;
-% \node[] at (1.2, -1.5, 0)   {Length: $1$ meter};
-%      \end{tikzpicture}\quad\quad
-%          \begin{tikzpicture}[scale=0.6]
-% \filldraw[white, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
-%    \filldraw[white, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
-%    \filldraw[white, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
-%    \filldraw[white, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
-%    \filldraw[white, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;         
-% \filldraw[gray, opacity=0.5] (0,0,2)--(0,4,2)--(4,4,2)--(4,0,2)--cycle;
-% \node[] at (1.2, -1.5, 0)   {Area: $1\, \text{meter}^2$};
-% 	\end{tikzpicture}\quad\quad
-% 	\begin{tikzpicture}[scale=0.6]
-%    \filldraw[gray, opacity=0.3](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
-%    \filldraw[gray, opacity=0.3] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
-%    \filldraw[gray, opacity=0.5] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
-%    \filldraw[blue, opacity=0.5] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
-%    \filldraw[red, opacity=0.5] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
-%    \node[] at (1.5, -1.5, 0)   {Volume: $1\, \text{meter}^3$};
-% \end{tikzpicture}
-% %    \end{center}     
-% \end{center}
+\begin{center}
+\tdplotsetmaincoords{70}{130}
+	\begin{tikzpicture}[scale=0.6]
+ \filldraw[white, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
+   \filldraw[white, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
+   \filldraw[white, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
+   \filldraw[white, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
+   \filldraw[white, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
+\draw[line width=1pt](0,0,2)--(4,0,2) ;
+\node[] at (1.2, -1.5, 0)   {Length: $1$ meter};
+     \end{tikzpicture}\quad\quad
+         \begin{tikzpicture}[scale=0.6]
+\filldraw[white, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
+   \filldraw[white, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
+   \filldraw[white, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
+   \filldraw[white, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
+   \filldraw[white, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;         
+\filldraw[gray, opacity=0.5] (0,0,2)--(0,4,2)--(4,4,2)--(4,0,2)--cycle;
+\node[] at (1.2, -1.5, 0)   {Area: $1\, \text{meter}^2$};
+	\end{tikzpicture}\quad\quad
+	\begin{tikzpicture}[scale=0.6]
+   \filldraw[gray, opacity=0.3](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
+   \filldraw[gray, opacity=0.3] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
+   \filldraw[gray, opacity=0.5] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
+   \filldraw[blue, opacity=0.5] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
+   \filldraw[red, opacity=0.5] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
+   \node[] at (1.5, -1.5, 0)   {Volume: $1\, \text{meter}^3$};
+\end{tikzpicture}
+%    \end{center}     
+ \end{center}
 
 \begin{question}\label{q:lengthAreaVolume}
     For each example, select an appropriate type of measurement.
