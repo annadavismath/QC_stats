@@ -14,7 +14,7 @@ We explore an application of concepts related to the normal distribution to manu
 \section*{An Introduction to Control Charts}
 \end{onlineOnly}
 
-\section*{Out of Control}
+\subsection*{Out of Control}
 
 \begin{exploration}\label{exp:OJ}
   A machine at a juice factory is set to fill juice bottles with 300 ml of juice.  If the the process is operating normally, the mean amount of juice per bottle is historically known to be normally distributed with $\mu=300$ ml, and standard deviation of $\sigma=2$ ml. To check how well the process is running the factory routinely samples their output to avoid under-filling or over-filling the bottles.  Six samples of size $n=4$ are shown below.
@@ -58,7 +58,7 @@ Variability is a natural part of any manufacturing process.
 
 Samples 5 and 6 suggest that the process is out of control, statistical analysis will help us determine whether or not this is the case. 
 
-\section*{Something significant...}
+\subsection*{Something significant...}
 Let's take a look at the data corresponding to the graphic in Exploration \ref{exp:OJ}.  In the table below, individual volumes are listed for each sample along with numerical summaries.  You are familiar with sample mean ($\bar{x}$) and sample standard deviation ($s$).  You may or may not have seen the  \emph{range}, denoted by $R$.  The range, just like standard deviation, is a measure of spread of data.  It is given by the difference between the largest and the smallest values in the sample.  
 $$R=\text{largest data point}-\text{smallest data point}$$
 
@@ -109,7 +109,13 @@ Observe that sample mean for sample 5 is considerably lower than the other sampl
 Recall that this population is normally distributed with $\mu=300$ ml, and $\sigma=2$ ml.  
 
 Select the most appropriate graph to represent the historically established population distribution.
+
+\begin{hint}
+    Use the Empirical Rule.
+\end{hint}
+
 \begin{multipleChoice}
+ \choice{Impossible to determine from the information given. }
 \choice[correct]{
       \begin{tikzpicture}
         \begin{axis}[
@@ -176,12 +182,9 @@ Select the most appropriate graph to represent the historically established popu
           \end{axis}
         \end{tikzpicture}
         }
-        \choice{Impossible to determine from the information given. }
 \end{multipleChoice}
 
-\begin{hint}
-    Use the Empirical Rule.
-\end{hint}
+
 \end{question}
 
 \begin{question}\label{quest:samplingDist}
@@ -196,6 +199,7 @@ Select the most appropriate graph to represent the historically established popu
 Select the most appropriate graph to represent the sampling distribution for $n=4$.
 
 \begin{multipleChoice}
+ \choice{Impossible to determine from the information given. }
 \choice{
       \begin{tikzpicture}
         \begin{axis}[
@@ -262,8 +266,7 @@ Select the most appropriate graph to represent the sampling distribution for $n=
           \end{axis}
         \end{tikzpicture}
         }
-        \choice{Impossible to determine from the information given. }
-\end{multipleChoice}
+     \end{multipleChoice}
     
 \end{question}
 
