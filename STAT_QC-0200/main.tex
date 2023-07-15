@@ -1,5 +1,5 @@
 \documentclass{ximera}
-\input{../preamble.tex}
+\input{preamble.tex}
 
 \author{Robert Kenney \and Paul Zachlin \and Nicholas Shay}
 \title{An Introduction to Control Charts} \license{CC BY-NC-SA 4.0}
@@ -62,7 +62,7 @@ Samples 5 and 6 suggest that the process is out of control, statistical analysis
 Let's take a look at the data corresponding to the graphic in Exploration \ref{exp:OJ}.  In the table below, individual volumes are listed for each sample along with numerical summaries.  You are familiar with sample mean ($\bar{x}$) and sample standard deviation ($s$).  You may or may not have seen the  \emph{range}, denoted by $R$.  The range, just like standard deviation, is a measure of spread of data.  It is given by the difference between the largest and the smallest values in the sample.  
 $$R=\text{largest data point}-\text{smallest data point}$$
 
-Both range and standard deviation can be used to estimate $\sigma$, but because the range takes into account only the two extreme values in the sample, it fails to capture the nuances of the spread, like standard deviation does.  For small samples ($n\leq 6$), either $R$ or $s$ can be used to estimate $\sigma$ with approximately the same efficiency.  As a result, when dealing with small samples, range is typically preferred over standard deviation due to ease of computations.
+Both range ($R$) and sample standard deviation ($s$) can be used to estimate population standard deviation ($\sigma$), but because the range takes into account only the two extreme values in the sample, it fails to capture the nuances of the spread, like standard deviation does.  For small samples ($n\leq 6$), either $R$ or $s$ can be used to estimate $\sigma$ with approximately the same efficiency.  As a result, when dealing with small samples, range is typically preferred over standard deviation due to ease of computations. (Montgomery)
 
 Compute $R$ for samples 3 and 6 and enter your answers in the cells provided.
 
@@ -188,7 +188,7 @@ Select the most appropriate graph to represent the historically established popu
 \end{question}
 
 \begin{question}\label{quest:samplingDist}
-    Now we turn our attention to the distribution of sample means.  Given that the population is normally distributed with $\mu=300$ ml, and $\sigma=2$ ml, find the mean and standard deviation for the distribution of sample means (sampling distribution) for samples of size 4 ($n=4$).
+    Now we turn our attention to the distribution of sample means, also known as sampling distribution.  Given that the population is normally distributed with $\mu=300$ ml, and $\sigma=2$ ml, find the mean and standard deviation for the sampling distribution for samples of size 4 ($n=4$).
 
     $$\mu_{\bar{X}}=\answer{300},\quad \sigma_{\bar{X}}=\answer{1}$$
 
@@ -270,7 +270,7 @@ Select the most appropriate graph to represent the sampling distribution for $n=
     
 \end{question}
 
-Now that we know what the sampling distribution should look like, let's take a look at where each sample falls within this distribution.
+Now that we know what the sampling distribution should look like, let's take a look at our samples.  Advance the slider to see where each sample mean falls within this distribution.  
 
 \begin{onlineOnly}
 \begin{center}
@@ -278,14 +278,23 @@ Now that we know what the sampling distribution should look like, let's take a l
 \end{center}
 \end{onlineOnly}
 
-IF the process is under control, then there is ZERO chance of us getting a sample such as sample 5.  Because such a sample did occur, we conclude that the process must be out of control, and must be paused.
 
+
+
+
+\begin{idea}
+IF the process is under control, then there is essentially ZERO chance of us getting a sample such as sample 5.  Because such a sample did occur, we conclude that the process must be out of control, and must be paused.
+\end{idea}
 
 
 
 \section*{Turning the normal distribution on its side}
 
-Make up a chart for OJ example and show the first 6 samples
+\begin{onlineOnly}
+\begin{center}
+\geogebra{uhdwnkgs}{950}{650}
+\end{center}
+\end{onlineOnly}
 
 \section*{Control Charts}
 
@@ -319,5 +328,7 @@ MIT Open CourseWare \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC
 Control of Manufacturing Processes (SMA 6303)
 
 \href{https://ocw.mit.edu/courses/2-830j-control-of-manufacturing-processes-sma-6303-spring-2008/resources/ps3/}{Assignment 3}, \href{https://ocw.mit.edu/courses/2-830j-control-of-manufacturing-processes-sma-6303-spring-2008/resources/35/}{Part 5}. 
+
+Montgomery, D. C. (2009). Statistical quality control: A modern introduction (6th ed.). Wiley.
 
 \end{document} 
