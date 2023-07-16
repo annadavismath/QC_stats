@@ -17,7 +17,7 @@ We explore an application of concepts related to the normal distribution to manu
 \subsection*{Out of Control}
 
 \begin{exploration}\label{exp:OJ}
-  A machine at a juice factory is set to fill juice bottles with 300 ml of juice.  If the the process is operating normally, the mean amount of juice per bottle is historically known to be normally distributed with $\mu=300$ ml, and standard deviation of $\sigma=2$ ml. To check how well the process is running the factory routinely samples their output to avoid under-filling or over-filling the bottles.  Six samples of size $n=4$ are shown below.
+  A machine at a juice factory is set to fill juice bottles with 300 ml of juice.  If the process is operating normally, the mean amount of juice per bottle is historically known to be normally distributed with $\mu=300$ ml, and standard deviation of $\sigma=2$ ml. To check how well the process is running the factory routinely samples their output to avoid under-filling or over-filling the bottles.  Six samples of size $n=4$ are shown below.
 
 \begin{center}
         \begin{tikzpicture}
@@ -26,9 +26,9 @@ We explore an application of concepts related to the normal distribution to manu
            \end{tikzpicture}
       \end{center}
 
-Variation in the output is a normal part of any manufacturing process.  The first four samples are depicted to represent amounts close to 300 ml and a reasonable amount of variation.  Samples 5 and 6 are sketched to illustrate a process gone wrong.  If you compare samples 5 and 6 carefully, you will see that each points to a different kind of problem with the process.
+Variability is a normal part of any manufacturing process.  The first four samples are depicted to represent amounts close to 300 ml, and a reasonable amount of variation.  Samples 5 and 6 are sketched to illustrate a process gone wrong.  If you compare samples 5 and 6 carefully, you will see that each sample points to a different kind of problem with the process.
 
-Samples are collected to gauge the current quality of the process.  What does sample 5 indicate about the process?
+Samples are collected to gauge the current state of the process.  What does sample 5 indicate about the process?
 
 \begin{multipleChoice}
 \choice{The process is no longer consistent.  Standard deviation is too high.}
@@ -103,7 +103,7 @@ Compute $R$ for samples 3 and 6 and enter your answers in the cells provided.
 \end{tabular}
 \end{center}
 
-Observe that sample mean for sample 5 is considerably lower than the other sample means, and also lower than the presumed population mean ($\mu=300$).  Observe also that the volumes in sample 6 are more spread out than the volumes in the other samples.  Is this part of the natural variation inherent in any manufacturing process, or is this an indication that the process is no longer in control?  The following questions will guide you to the answer.
+Observe that sample mean for sample 5 is considerably lower than the other sample means, and also lower than the presumed population mean ($\mu=300$).  Observe also that the volumes in sample 6 are more spread out than the volumes in the other samples, as indicated by the magnitudes of $R$ and $s$.  Is this part of the natural variation inherent in any manufacturing process, or is this an indication that the process is no longer in control?  The following questions will guide you to the answer.
 
 \begin{question}\label{quest:popBellCurve}
 Recall that this population is normally distributed with $\mu=300$ ml, and $\sigma=2$ ml.  
@@ -278,17 +278,17 @@ Now that we know what the sampling distribution should look like, let's take a l
 \end{center}
 \end{onlineOnly}
 
+Observe that all sample means, with the exception of sample 5, are located in the green zone near the center of the graph.  The green zone, also known as Zone 1, is located between $\mu -\sigma$ and $\mu+sigma$.  From the Empirical Rule, we know that approximately $68\%$ of data are located in this zone. 
 
-
-
+Sample 5 mean is located more than three standard deviations away from the mean.  From the Empirical Rule, we know that approximately $99.7\%$ of data are located within three standard deviations from the mean.  Therefore, the probability of sample 5, or a more extreme sample, occurring is very near zero.  What can this tell us?
 
 \begin{idea}
-IF the process is under control, then there is essentially ZERO chance of us getting a sample such as sample 5.  Because such a sample did occur, we conclude that the process must be out of control, and must be paused.
+IF the process is under control ($\mu=300, \sigma=1$), then there is essentially ZERO chance of us getting a sample such as sample 5, or a more extreme sample.  Because such a sample DID occur, we conclude that the process must be out of control, and must be paused.
 \end{idea}
 
+\subsubsection*{Turning the normal distribution on its side}
 
-
-\section*{Turning the normal distribution on its side}
+To monitor a process over time, we will mark times (or sample numbers) along the horizontal axis, and the relevant sample statistic on the vertical axis.  Just like we marked the green, yellow and the red zones under the bell curve in the diagram above, we will mark green, yellow and red zones (Zones 1, 2, 3) to help us identify the zone where each sample mean falls.  We can even mentally add a bell curve to help us visualize the situation, as shown for sample 1.
 
 \begin{onlineOnly}
 \begin{center}
@@ -296,9 +296,26 @@ IF the process is under control, then there is essentially ZERO chance of us get
 \end{center}
 \end{onlineOnly}
 
-\section*{Control Charts}
+The diagram above is an example of a \emph{Control Chart}.  Control charts are used by technicians and engineers supervising manufacturing processes to track sample means and spread in order to quickly detect a process no longer in control.  There are several types of control charts.  In the next section we will examine two most commonly used types.
 
-x-bar and R charts.  Set up an R chart for the OJ example and compare and contrast what these charts show with regard to Samples 5 and 6.
+\subsection*{Control Charts}
+
+To make sure that a process is in control, it is essential to monitor variability as well as means.  In the previous section, we presented a control chart for sample means.  This kind of chart is called an \emph{x-bar chart}.  To monitor variability, either range ($R$) or sample standard deviation ($s$) can be used.  As discussed earlier, $R$ is much easier to compute than $s$, and produces similar results for small samples ($n\leq 6$).  As a result \emph{R-charts}, which monitor the range, are used more often than \emph{s-charts}.
+
+Let's return to our juice bottle example to examine what the x-bar chart and the R-chart tell us when taken together.  The following charts were generated using qcc package for R.
+
+\begin{center}
+        \begin{tikzpicture}
+\node[inner sep=0pt, anchor=base] (p1) at (0,0)
+  {\includegraphics[height=40mm]{xBarChart.jpg}};
+  \node[inner sep=0pt, anchor=base] (p2) at (6.2,0)
+  {\includegraphics[height=40mm]{RChart.jpg}};
+           \end{tikzpicture}
+      \end{center}
+
+
+
+
 
 \section*{Rules}
 Write out Whatever rules we decide to use.  
