@@ -114,8 +114,17 @@ $$20\text{cm}\quad 20.0\text{cm}\quad 20.00\text{cm}\quad 20.000\text{cm} $$
 \end{multipleChoice} 
 \end{question}
 
+\subsection*{Specification Limits}
+Manufactured parts typically have to fit with many other parts, so their measurements matter. Due to natural variation inherent in all manufacturing processes we cannot require a part to have a specific exact measurement.  Instead, we require that the measurement falls within a certain acceptable range based on practical restrictions on how big or small a part can be and still fit with the other parts.  Such restrictions are called \emph{specification limits} or \emph{specs}.  The diagram below breaks the specification limits for the length of a screw into two types.  The \emph{lower specification limit} (LSL) is the shortest length a screw can be to hold the two planks of wood together; the \emph{upper specification limit} (USL) is the longest length a screw can be without sticking out on the other side and potentially causing injury.
 
+\begin{center}
+        \begin{tikzpicture}
+\node[inner sep=0pt, anchor=base] (p1) at (0,0)
+  {\includegraphics[height=40mm]{screw.jpg}};
+           \end{tikzpicture}
+      \end{center}
 
+If a part's measurement falls outside of the specification limits, the part is considered to be \emph{defective} or \emph{scrap}.  For example, we may order a batch of $50$ mm screws with specifications of $50$mm $\pm 5$mm.   Given these specs, a $52$mm screw is okay, but a $44$mm screw is scrap.
  
 \begin{exploration}\label{exp:histogram1}
 Consider a sample of 100 silicon wafers whose thickness of a metal layer resulting from a chemical vapor deposition (CVD) in a semiconductor plant. The data represent the layer thickness on semiconductor wafers measured in angstroms (one ten billionth of a meter).
