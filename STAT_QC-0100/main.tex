@@ -114,18 +114,10 @@ $$20\text{cm}\quad 20.0\text{cm}\quad 20.00\text{cm}\quad 20.000\text{cm} $$
 \end{multipleChoice} 
 \end{question}
 
-\subsection*{Specification Limits}
-Manufactured parts typically have to fit with many other parts, so their measurements matter. Due to natural variation inherent in all manufacturing processes we cannot require a part to have a specific exact measurement.  Instead, we require that the measurement falls within a certain acceptable range based on practical restrictions on how big or small a part can be and still fit with the other parts.  Such restrictions are called \emph{specification limits} or \emph{specs}.  The diagram below breaks the specification limits for the length of a screw into two types.  The \emph{lower specification limit} (LSL) is the shortest length a screw can be to hold the two planks of wood together; the \emph{upper specification limit} (USL) is the longest length a screw can be without sticking out on the other side and potentially causing injury.
+\subsection*{Visualizing Manufacturing Data}
 
-\begin{center}
-        \begin{tikzpicture}
-\node[inner sep=0pt, anchor=base] (p1) at (0,0)
-  {\includegraphics[height=40mm]{screw.jpg}};
-           \end{tikzpicture}
-      \end{center}
+Need a better title.  This is where we would talk about the shape of measurement data.
 
-If a part's measurement falls outside of the specification limits, the part is considered to be \emph{defective} or \emph{scrap}.  For example, we may order a batch of $50$ mm screws with specifications of $50$mm $\pm 5$mm.   Given these specs, a $52$mm screw is okay, but a $44$mm screw is scrap.
- 
 \begin{exploration}\label{exp:histogram1}
 Consider a sample of 100 silicon wafers whose thickness of a metal layer resulting from a chemical vapor deposition (CVD) in a semiconductor plant. The data represent the layer thickness on semiconductor wafers measured in angstroms (one ten billionth of a meter).
 
@@ -144,14 +136,55 @@ CLICK on the SLIDER to change the number of buckets (bars).
 
 We can see by the histogram output that the data has the triangular shape and symmetry associated with the bell shape. We can say that this sample data is normally distributed.
 
-
-\end{exploration}
-
 I'm including this wafer pic just for fun:
 
 \begin{image}
          \includegraphics[height=1.5in]{200mmWafer.png}
 \end{image}
+\end{exploration}
+
+\subsection*{Specification Limits}
+Manufactured parts typically have to fit with many other parts, so their measurements matter. Due to natural variation inherent in all manufacturing processes we cannot require a part to have a specific exact measurement.  Instead, we require that the measurement falls within a certain acceptable range based on practical restrictions on how big or small a part can be and still fit with the other parts.  Such restrictions are called \emph{specification limits} or \emph{specs}.  The diagram below breaks the specification limits for the length of a screw into two types.  The \emph{lower specification limit} (LSL) is the shortest length a screw can be to hold the two planks of wood together; the \emph{upper specification limit} (USL) is the longest length a screw can be without sticking out on the other side and potentially causing injury.
+
+\begin{center}
+        \begin{tikzpicture}
+\node[inner sep=0pt, anchor=base] (p1) at (0,0)
+  {\includegraphics[height=40mm]{screw1.jpg}};
+           \end{tikzpicture}
+      \end{center}
+
+If a part's measurement falls outside of the specification limits, the part is considered to be \emph{defective} or \emph{scrap}.  For example, we may order a batch of $50$ mm screws with specifications of $50$mm $\pm 6$mm.   Given these specs, a $52$mm screw is okay, but a $43$mm screw is scrap.
+
+\subsection*{Six-sigma quality standard}
+Let's return to the large batch of screws example from the previous section.  Recall that we set the specs for screw length to be $50$mm $\pm 6$mm.  
+
+Both fall within specs, but Machine 2 is much better than Machine 1.
+
+\begin{onlineOnly}
+\begin{center} 
+\geogebra{dhvgryen}{800}{600} 
+\end{center}
+\end{onlineOnly}
+
+\begin{example}\label{ex:defParts1}
+    Suppose that the output of Machine 1 can be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=2$.  If a batch of $1,000,000$ is ordered.  How many defective screws do you expect?
+    \begin{explanation}
+        Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.7\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  Therefore, $99.7\%=0.997$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ using Machine 1, then the number of defective screws will be approximately
+        $$(1-0.997)\times 1,000,000=0.003\times 1,000,000=3,000$$
+        
+    \end{explanation}
+\end{example}
+
+
+\begin{onlineOnly}
+\begin{center} 
+\desmos{f95viwzyer}{800}{600} 
+\end{center}
+\end{onlineOnly}
+ 
+
+
+
 
 
 \section*{Practice Problems}
