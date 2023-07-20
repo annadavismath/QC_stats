@@ -116,7 +116,11 @@ $$20\text{cm}\quad 20.0\text{cm}\quad 20.00\text{cm}\quad 20.000\text{cm} $$
 
 \subsection*{Visualizing Manufacturing Data}
 
-Need a better title.  This is where we would talk about the shape of measurement data.
+When measuring a large quantity of parts on the shop floor, it is common to simply create a list of data.  This list is then taken to a quality control room or office, where the data are entered into a spreadsheet for analysis. The spreadsheet is a tool that helps the data analyst to gather information about the process. From just the list, it would be difficult to estimate the average of the data collected. However, once we draw a picture of the data in the form of a histogram, we can use the histogram to gather information about the manufacturing process. 
+
+We will start with the shape of the histogram.  This is a crude, subjective assessment of the histogram but can be a useful indicator.  If the histogram is normally distributed, then the process is experiencing only \emph{common} or \emph{natural causes of variation}. This type of variation is inherent in the process and not easy to reduce.  
+
+If the histogram is not normally distributed, then the process is likely experiencing \emph{assignable causes of variation}.  Assignable causes of variation are unwanted issues that surface periodically and can normally be eliminated on the shop floor by machine operators.  Examples of assignable causes include operator fatigue, change in the quality of raw materials, equipment wear, drastic change in the manufacturing environment such as a drastic change in temperature or humidity.
 
 \begin{exploration}\label{exp:histogram1}
 Consider a sample of 100 silicon wafers whose thickness of a metal layer resulting from a chemical vapor deposition (CVD) in a semiconductor plant. The data represent the layer thickness on semiconductor wafers measured in angstroms (one ten billionth of a meter).
@@ -169,7 +173,7 @@ Both fall within specs, but Machine 2 is much better than Machine 1.
 \begin{example}\label{ex:defParts1}
     Suppose that the output of Machine 1 can be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=2$.  If a batch of $1,000,000$ is ordered.  How many defective screws do you expect?
     \begin{explanation}
-        Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.7\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  Therefore, $99.73\%=0.9973$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ using Machine 1, then the number of defective screws will be approximately
+        Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.73\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  Therefore, $99.73\%=0.9973$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ using Machine 1, then the number of defective screws will be approximately
         $$(1-0.9973)\times 1,000,000=0.0027\times 1,000,000=2,700$$
         
     \end{explanation}
@@ -185,13 +189,27 @@ Both fall within specs, but Machine 2 is much better than Machine 1.
 
 \subsection*{Accuracy and Precision}
 
+Let's generalize what we have learned about the spread of the data compared to specification limits.
+
+If the histogram is well-centered within the specification limits, then the process is \emph{accurate}. That is, the process is making product that is close to the nominal or midpoint of the specification range.
+
+If the spread of the data is as wide as the specification limits, then the data is not very \emph{precise}, and the process is likely to be making scrap.
+
+Use the sliders in the GeoGebra interactive below to visualize accuracy and precision.
 \begin{onlineOnly}
 \begin{center} 
 \geogebra{xpfp98rz}{700}{600} 
 \end{center}
 \end{onlineOnly}
 
-
+\subsection*{Summary}
+Histogram provide three pieces of information about the data:
+\begin{itemize}
+    \item Shape of data.  Measurements from a production process are typically normally distributed.  
+    \item Accuracy.  The histogram must be centered between the specification limits.  
+    \item Precision.  The histogram should roughly occupy the middle half of the space between the spec limits. 
+\end{itemize}
+If the histogram is not bell-shaped, well-centered within the spec limits or is too wide, the process needs to be paused and evaluated.
 
 
 
