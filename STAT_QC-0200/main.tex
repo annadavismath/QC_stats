@@ -48,7 +48,7 @@ What does sample 6 indicate about the process?
 
 Variability is a natural part of any manufacturing process.  
 
-\emph{Chance-cause variation} 
+\emph{Natural cause variation} 
 
 \emph{Assignable cause variation}
 
@@ -300,9 +300,9 @@ The diagram above is an example of a \emph{Control Chart}.  Control charts are u
 
 \subsection*{Control Charts}
 
-To make sure that a process is in control, it is essential to monitor variability as well as means.  In the previous section, we presented a control chart for sample means.  This kind of chart is called an \emph{x-bar chart}.  To monitor variability, either range ($R$) or sample standard deviation ($s$) can be used.  As discussed earlier, $R$ is much easier to compute than $s$, and produces similar results for small samples ($n\leq 6$).  As a result \emph{R-charts}, which monitor the range, are used more often than \emph{s-charts}.
+To make sure that a process is in control, it is essential to monitor variability as well as means.  In the previous section, we presented a control chart for sample means.  This kind of chart is called an \emph{x-bar chart}.  To monitor variability, either range ($R$) or sample standard deviation ($s$) can be used.  As discussed earlier, $R$ is much easier to compute than $s$, and produces similar results for small samples ($n\leq 6$).  As a result, \emph{R-charts}, which monitor the range, are used more often than \emph{s-charts}.
 
-Let's return to our juice bottle example to examine what the x-bar chart and the R-chart tell us when taken together.  The following charts were generated using qcc package for R.
+Let's return to our juice bottle example to examine what the x-bar chart and the R-chart tell us when taken together.  The following charts were generated in RStudio using the qcc package.
 
 \begin{center}
          \begin{tikzpicture}
@@ -313,10 +313,7 @@ Let's return to our juice bottle example to examine what the x-bar chart and the
             \end{tikzpicture}
        \end{center}
 
-% \begin{center}     
-% \includegraphics{xBarChart.jpg}\quad\quad
-% \includegraphics{RChart.jpg}
-% \end{center}
+This example highlights the reason why x-bar charts and R-charts should be used together.  The x-bar chart was sufficient to spot the problem with sample 5.  The problem with sample 6, however, would have been missed if we had used the x-bar chart alone. 
 
 
 
@@ -326,29 +323,11 @@ Write out Whatever rules we decide to use.
 
 This is where I think my example from the next section would fit to prepare students for the case study.
 
-\subsection*{CASE STUDY: Thermoform production}
 
-In theraform production, sheets of plastic are heated and molded into a desired shape.  In the Desmos sheet below, we can see the diameters of 80 different theraform spheres produced in Taiwan.  Notice that the last 20 were too big - something about the production had gone wrong.  Were there warning signs that a problem was coming before it happened?
-
-\desmos{lwyjp4jqzh}{800}{600}
-
-The following YouTube video gives some ideas of how we can use the Desmos sheet.
-
-\youtube{NIg050X6q10}
-
-Also included in the Desmos sheet are $\Bar{X}$-control charts for samples of size $n=3$ and $n=5$.  Maybe we can say something about applying Western Electric rules here.
 
 \section*{Practice Problems}
 
 \section*{References}
-
-CASE STUDY on Thermoform Production is modified from:
-
-MIT Open CourseWare \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC-BY-NC-SA}
-
-Control of Manufacturing Processes (SMA 6303)
-
-\href{https://ocw.mit.edu/courses/2-830j-control-of-manufacturing-processes-sma-6303-spring-2008/resources/ps3/}{Assignment 3}, \href{https://ocw.mit.edu/courses/2-830j-control-of-manufacturing-processes-sma-6303-spring-2008/resources/35/}{Part 5}. 
 
 Montgomery, D. C. (2009). Statistical quality control: A modern introduction (6th ed.). Wiley.
 

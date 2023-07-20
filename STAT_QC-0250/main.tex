@@ -2,7 +2,7 @@
 \input{../preamble.tex}
 
 \author{Robert Kenney \and Paul Zachlin \and Nicholas Shay}
-\title{Using Control Charts} \license{CC BY-NC-SA 4.0}
+\title{X-bar Charts} \license{CC BY-NC-SA 4.0}
 \begin{document}
 
 \begin{abstract}
@@ -11,16 +11,12 @@ We study basic ideas behind the use of control charts in industry.
 \maketitle
 
 \begin{onlineOnly}
-\section*{Using Control Charts}
+\section*{X-bar Charts}
 \end{onlineOnly}
 
-\section*{Charting different statistics}
+In the last section we introduced two kinds of control charts, x-bar chart and R-chart.  In this section we will 
 
-\subsection*{$\Bar{X}$ (X-bar) Control Charts}
-
-\subsection*{R Control Charts}
-
-\section*{When is it time to investigate?}
+\subsection*{When is it time to investigate?}
 
 \begin{problem}\label{prob:controlChartWithSlider}
 Suppose that a manufacturing process is known to have a normal distribution with a mean $\mu=3.5$, and standard deviation $\sigma=2$.  A random sample of size $n=4$ is collected every hour to monitor the manufacturing process.  The distribution of sample means (sampling distribution) will be normal and $$\mu_{\bar{x}}=\answer{3.5},\quad \sigma_{\bar{x}}=\answer{1}$$
@@ -88,10 +84,28 @@ What can you say about Samples  26-32:
 \end{multipleChoice}
 
 
+\subsection*{CASE STUDY: Thermoform production}
+
+In theraform production, sheets of plastic are heated and molded into a desired shape.  In the Desmos sheet below, we can see the diameters of 80 different theraform spheres produced in Taiwan.  Notice that the last 20 were too big - something about the production had gone wrong.  Were there warning signs that a problem was coming before it happened?
+
+\desmos{lwyjp4jqzh}{800}{600}
+
+The following YouTube video gives some ideas of how we can use the Desmos sheet.
+
+\youtube{NIg050X6q10}
+
+Also included in the Desmos sheet are $\Bar{X}$-control charts for samples of size $n=3$ and $n=5$.  Maybe we can say something about applying Western Electric rules here.
+
 \end{problem}
 \section*{Practice Problems}
 
 \section*{References}
+CASE STUDY on Thermoform Production is modified from:
 
+MIT Open CourseWare \href{https://creativecommons.org/licenses/by-nc-sa/4.0/}{CC-BY-NC-SA}
+
+Control of Manufacturing Processes (SMA 6303)
+
+\href{https://ocw.mit.edu/courses/2-830j-control-of-manufacturing-processes-sma-6303-spring-2008/resources/ps3/}{Assignment 3}, \href{https://ocw.mit.edu/courses/2-830j-control-of-manufacturing-processes-sma-6303-spring-2008/resources/35/}{Part 5}. 
 
 \end{document} 
