@@ -169,8 +169,8 @@ Both fall within specs, but Machine 2 is much better than Machine 1.
 \begin{example}\label{ex:defParts1}
     Suppose that the output of Machine 1 can be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=2$.  If a batch of $1,000,000$ is ordered.  How many defective screws do you expect?
     \begin{explanation}
-        Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.7\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  Therefore, $99.7\%=0.997$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ using Machine 1, then the number of defective screws will be approximately
-        $$(1-0.997)\times 1,000,000=0.003\times 1,000,000=3,000$$
+        Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.7\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  Therefore, $99.73\%=0.9973$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ using Machine 1, then the number of defective screws will be approximately
+        $$(1-0.9973)\times 1,000,000=0.0027\times 1,000,000=2,700$$
         
     \end{explanation}
 \end{example}
@@ -181,7 +181,15 @@ Both fall within specs, but Machine 2 is much better than Machine 1.
 \desmos{f95viwzyer}{800}{600} 
 \end{center}
 \end{onlineOnly}
- 
+
+
+\subsection*{Accuracy and Precision}
+
+\begin{onlineOnly}
+\begin{center} 
+\geogebra{xpfp98rz}{600}{400} 
+\end{center}
+\end{onlineOnly}
 
 
 
