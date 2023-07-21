@@ -22,8 +22,8 @@ In the last section we introduced two kinds of control charts, x-bar chart and R
 \subsection*{When is it time to investigate?}
 
 \href{https://www.qimacros.com/control-chart/stability-analysis-control-chart-rules/}{Nelson rules} for detecting an out-of-control process:
-\begin{enumerate}
-    \item One point falls above UCL or below LCL.
+
+Rule 1:  One point falls above UCL or below LCL.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -66,8 +66,224 @@ In the last section we introduced two kinds of control charts, x-bar chart and R
  \end{tikzpicture}
 \end{center}
 
-\item Two out of three consecutive points are above $\mu+2\sigma$ or below $\mu-2\sigma$.
-\end{enumerate}
+Rule 2:  Two out of three consecutive points are on the same side of the center line and above $\mu+2\sigma$ or below $\mu-2\sigma$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[black, thick, fill=green,opacity=0.25] (0,-1) rectangle (11, 1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,-2) rectangle (11, -1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,1) rectangle (11, 2);
+\draw[black, thick, fill=red,opacity=0.25] (0,-3) rectangle (11, -2);
+\draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
+\draw[thin,gray!40] (0,-4) grid (11,4);
+\draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+
+\node[left=1mm] at (0,1){$\mu+\sigma$};
+\node[left=1mm] at (0,-1){$\mu-\sigma$};
+\node[left=1mm] at (0,2){$\mu+2\sigma$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+
+ \node (A) at (1,1.5) [circle,fill=black,scale=0.6]{};
+ \node (B) at (2,-1.2) [circle,fill=black,scale=0.6]{};
+ \node (C) at (3,-0.5) [circle,fill=black,scale=0.6]{};
+ \node (D) at (4,-2.3) [circle,fill=red,scale=0.8]{};
+ \node (E) at (5,-1.5) [circle,fill=black,scale=0.6]{};
+ \node (F) at (6,-2.5) [circle,fill=red,scale=0.8]{};
+\node (G) at (7,0.5) [circle,fill=black,scale=0.6]{};
+\node (H) at (8,1.7) [circle,fill=black,scale=0.6]{};
+\node (I) at (9,2.7) [circle,fill=red,scale=0.8]{};
+\node (J) at (10,2.8) [circle,fill=red,scale=0.8]{};
+
+\draw[-,dashed] (A)--(B); 
+\draw[-,dashed] (B)--(C);
+\draw[-,dashed] (C)--(D);
+\draw[-,dashed] (D)--(E); 
+\draw[-,dashed] (E)--(F);
+\draw[-,dashed] (F)--(G); 
+\draw[-,dashed] (G)--(H);
+\draw[-,dashed] (H)--(I);
+\draw[-,dashed] (I)--(J);
+
+ \end{tikzpicture}
+\end{center}
+
+Rule 3: Four out of five points are on the same side of the center line and above $\mu+\sigma$ or below $\mu-\sigma$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[black, thick, fill=green,opacity=0.25] (0,-1) rectangle (11, 1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,-2) rectangle (11, -1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,1) rectangle (11, 2);
+\draw[black, thick, fill=red,opacity=0.25] (0,-3) rectangle (11, -2);
+\draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
+\draw[thin,gray!40] (0,-4) grid (11,4);
+\draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+
+\node[left=1mm] at (0,1){$\mu+\sigma$};
+\node[left=1mm] at (0,-1){$\mu-\sigma$};
+\node[left=1mm] at (0,2){$\mu+2\sigma$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+
+ \node (A) at (1,1.5) [circle,fill=red,scale=0.8]{};
+ \node (B) at (2,1.2) [circle,fill=red,scale=0.8]{};
+ \node (C) at (3,2.5) [circle,fill=red,scale=0.8]{};
+ \node (D) at (4,0.3) [circle,fill=black,scale=0.6]{};
+ \node (E) at (5,1.5) [circle,fill=red,scale=0.8]{};
+ \node (F) at (6,-2.5) [circle,fill=red,scale=0.8]{};
+\node (G) at (7,-0.5) [circle,fill=black,scale=0.6]{};
+\node (H) at (8,-1.7) [circle,fill=red,scale=0.8]{};
+\node (I) at (9,-1.8) [circle,fill=red,scale=0.8]{};
+\node (J) at (10,-2.1) [circle,fill=red,scale=0.8]{};
+
+\draw[-,dashed] (A)--(B); 
+\draw[-,dashed] (B)--(C);
+\draw[-,dashed] (C)--(D);
+\draw[-,dashed] (D)--(E); 
+\draw[-,dashed] (E)--(F);
+\draw[-,dashed] (F)--(G); 
+\draw[-,dashed] (G)--(H);
+\draw[-,dashed] (H)--(I);
+\draw[-,dashed] (I)--(J);
+
+ \end{tikzpicture}
+\end{center}
+
+Rule 4: Eight consecutive points are on the same side of the center line.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[black, thick, fill=green,opacity=0.25] (0,-1) rectangle (11, 1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,-2) rectangle (11, -1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,1) rectangle (11, 2);
+\draw[black, thick, fill=red,opacity=0.25] (0,-3) rectangle (11, -2);
+\draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
+\draw[thin,gray!40] (0,-4) grid (11,4);
+\draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+
+\node[left=1mm] at (0,1){$\mu+\sigma$};
+\node[left=1mm] at (0,-1){$\mu-\sigma$};
+\node[left=1mm] at (0,2){$\mu+2\sigma$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+
+ \node (A) at (1,0.5) [circle,fill=red,scale=0.8]{};
+ \node (B) at (2,0.3) [circle,fill=red,scale=0.8]{};
+ \node (C) at (3,1.5) [circle,fill=red,scale=0.8]{};
+ \node (D) at (4,0.3) [circle,fill=red,scale=0.8]{};
+ \node (E) at (5,1.5) [circle,fill=red,scale=0.8]{};
+ \node (F) at (6,1.8) [circle,fill=red,scale=0.8]{};
+\node (G) at (7,0.5) [circle,fill=red,scale=0.8]{};
+\node (H) at (8,1.2) [circle,fill=red,scale=0.8]{};
+\node (I) at (9,-0.8) [circle,fill=black,scale=0.6]{};
+\node (J) at (10,0.2) [circle,fill=black,scale=0.6]{};
+
+\draw[-,dashed] (A)--(B); 
+\draw[-,dashed] (B)--(C);
+\draw[-,dashed] (C)--(D);
+\draw[-,dashed] (D)--(E); 
+\draw[-,dashed] (E)--(F);
+\draw[-,dashed] (F)--(G); 
+\draw[-,dashed] (G)--(H);
+\draw[-,dashed] (H)--(I);
+\draw[-,dashed] (I)--(J);
+
+ \end{tikzpicture}
+\end{center}
+
+Rule 5: Six consecutive points are ascending/decending. 
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[black, thick, fill=green,opacity=0.25] (0,-1) rectangle (11, 1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,-2) rectangle (11, -1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,1) rectangle (11, 2);
+\draw[black, thick, fill=red,opacity=0.25] (0,-3) rectangle (11, -2);
+\draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
+\draw[thin,gray!40] (0,-4) grid (11,4);
+\draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+
+\node[left=1mm] at (0,1){$\mu+\sigma$};
+\node[left=1mm] at (0,-1){$\mu-\sigma$};
+\node[left=1mm] at (0,2){$\mu+2\sigma$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+
+ \node (A) at (1,0.5) [circle,fill=black,scale=0.6]{};
+ \node (B) at (2,1.3) [circle,fill=red,scale=0.8]{};
+ \node (C) at (3,1) [circle,fill=red,scale=0.8]{};
+ \node (D) at (4,0.3) [circle,fill=red,scale=0.8]{};
+ \node (E) at (5,-0.5) [circle,fill=red,scale=0.8]{};
+ \node (F) at (6,-0.8) [circle,fill=red,scale=0.8]{};
+\node (G) at (7,-0.9) [circle,fill=red,scale=0.8]{};
+\node (H) at (8,-0.2) [circle,fill=black,scale=0.6]{};
+\node (I) at (9,-0.8) [circle,fill=black,scale=0.6]{};
+\node (J) at (10,0.2) [circle,fill=black,scale=0.6]{};
+
+\draw[-,dashed] (A)--(B); 
+\draw[-,dashed] (B)--(C);
+\draw[-,dashed] (C)--(D);
+\draw[-,dashed] (D)--(E); 
+\draw[-,dashed] (E)--(F);
+\draw[-,dashed] (F)--(G); 
+\draw[-,dashed] (G)--(H);
+\draw[-,dashed] (H)--(I);
+\draw[-,dashed] (I)--(J);
+
+ \end{tikzpicture}
+\end{center}
+
+Rule 6: Fifteen consecutive points are between $\mu-\sigma$ and $\mu+\sigma$.  This is known as ``hugging the center line".
+
+Rule 7: Fourteen consecutive points form an alternating up/down pattern.
+
+Rule 8:  Eight consecutive points are above $\mu+\sigma$ or below $\mu-\sigma$.
+
+\begin{center}
+\begin{tikzpicture}[scale=1]
+\draw[black, thick, fill=green,opacity=0.25] (0,-1) rectangle (11, 1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,-2) rectangle (11, -1);
+\draw[black, thick, fill=yellow,opacity=0.25] (0,1) rectangle (11, 2);
+\draw[black, thick, fill=red,opacity=0.25] (0,-3) rectangle (11, -2);
+\draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
+\draw[thin,gray!40] (0,-4) grid (11,4);
+\draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+
+\node[left=1mm] at (0,1){$\mu+\sigma$};
+\node[left=1mm] at (0,-1){$\mu-\sigma$};
+\node[left=1mm] at (0,2){$\mu+2\sigma$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+
+ \node (A) at (1,0.5) [circle,fill=black,scale=0.6]{};
+ \node (B) at (2,1.3) [circle,fill=red,scale=0.8]{};
+ \node (C) at (3,1.2) [circle,fill=red,scale=0.8]{};
+ \node (D) at (4,-1.3) [circle,fill=red,scale=0.8]{};
+ \node (E) at (5,-1.5) [circle,fill=red,scale=0.8]{};
+ \node (F) at (6,1.8) [circle,fill=red,scale=0.8]{};
+\node (G) at (7,-1.2) [circle,fill=red,scale=0.8]{};
+\node (H) at (8,-1.2) [circle,fill=red,scale=0.8]{};
+\node (I) at (9,1.3) [circle,fill=red,scale=0.8]{};
+\node (J) at (10,0.2) [circle,fill=black,scale=0.6]{};
+
+\draw[-,dashed] (A)--(B); 
+\draw[-,dashed] (B)--(C);
+\draw[-,dashed] (C)--(D);
+\draw[-,dashed] (D)--(E); 
+\draw[-,dashed] (E)--(F);
+\draw[-,dashed] (F)--(G); 
+\draw[-,dashed] (G)--(H);
+\draw[-,dashed] (H)--(I);
+\draw[-,dashed] (I)--(J);
+
+ \end{tikzpicture}
+\end{center}
 
 \begin{problem}\label{prob:controlChartWithSlider}
 Suppose that a manufacturing process is known to have a normal distribution with a mean $\mu=3.5$, and standard deviation $\sigma=2$.  A random sample of size $n=4$ is collected every hour to monitor the manufacturing process.  The distribution of sample means (sampling distribution) will be normal and $$\mu_{\bar{x}}=\answer{3.5},\quad \sigma_{\bar{x}}=\answer{1}$$
