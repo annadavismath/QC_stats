@@ -2,7 +2,7 @@
 \input{../preamble.tex}
 
 \author{D. Davis \and R. Speckert \and N. Shay \and A. Davis}
-\title{Measurement, Data Collection and Representation} \license{CC BY-NC-SA 4.0}
+\title{Measurement, and Data Representation} \license{CC BY-NC-SA 4.0}
 \begin{document}
 
 \begin{abstract}
@@ -10,7 +10,7 @@
 \maketitle
 
 \begin{onlineOnly}
-\section*{Measurement, Data Collection and Representation}
+\section*{Measurement, and Data Representation}
 \end{onlineOnly}
 \subsection*{Background}
 Units of measurement are used to represent physical quantities like length, area, volume, mass, temperature, current, voltage, intensity, etc.  There are different measurement units used to represent the magnitude of the physical quantities. The International System of Units (SI Units) are the most widely used across the world. Measurement units compare how large or small a physical quantity is as compared to the basic standard quantity.  
@@ -160,9 +160,9 @@ Manufactured parts typically have to fit with many other parts, so their measure
 If a part's measurement falls outside of the specification limits, the part is considered to be \emph{defective} or \emph{scrap}.  For example, we may order a batch of $50$ mm screws with specifications of $50$mm $\pm 6$mm.   Given these specs, a $52$mm screw is okay, but a $43$mm screw is scrap.
 
 \subsection*{Quality Standards}
-Let's return to the large batch of screws example from the previous section.  Recall that we set the specs for screw length to be $50$mm $\pm 6$mm.  
+We will start by visualizing the output of two different machines engaged in manufacturing screws from our earlier discussion.  Recall that we set the specs for screw length to be $50$mm $\pm 6$mm.  
 
-Both fall within specs, but Machine 2 is much better than Machine 1.
+Use the check boxes in the GeoGebra interactive below to view the data from Machines 1 and 2.  The output from each machine is approximately normally distributed and appears to fall within the specs.  
 
 \begin{onlineOnly}
 \begin{center} 
@@ -170,15 +170,59 @@ Both fall within specs, but Machine 2 is much better than Machine 1.
 \end{center}
 \end{onlineOnly}
 
+\begin{question}\label{quest:compareMachines}
+    What is true about the lengths of screws made by Machine 1 and Machine 2?  Check ALL that apply.
+    \begin{selectAll}
+        \choice[correct]{The means for the two machines are approximately the same.}
+        \choice{The standard deviations for the two machines are approximately the same.}
+        \choice{The standard deviation is smaller for Machine 1}
+        \choice[correct]{The standard deviation is greater for Machine 1}
+        \choice{Only the means can be estimated from the graph.  We cannot compare standard deviations.}
+    \end{selectAll}
+\end{question}
+
+The data in the GeoGebra interactive above shows that the output from both machines falls within the specification limits.  In other words, neither machine has produced scrap.  However, the number of data points used to construct these histograms is relatively small -- only 100 points were used for each machine.  Given that Machine 1 came very close to spilling outside the spec limits, it is very likely that manufacturing $1,000,000$ screws using Machine 1 would result in a number of defective screws.  Machine 2 appears to be less likely to produce scrap than Machine 1.  In the next example, we use the Empirical Rule to estimate the amount of scrap produced by Machine 1.    
+
 \begin{example}\label{ex:defParts1}
-    Suppose that the output of Machine 1 can be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=2$.  If a batch of $1,000,000$ is ordered.  How many defective screws do you expect?
+    Suppose that the output of Machine 1 can be described using a normal distribution with mean $\mu=50$ and standard deviation $\sigma=2$.  If a batch of $1,000,000$ is ordered, how many defective screws do you expect?
     \begin{explanation}
-        Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.73\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  Therefore, $99.73\%=0.9973$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ using Machine 1, then the number of defective screws will be approximately
-        $$(1-0.9973)\times 1,000,000=0.0027\times 1,000,000=2,700$$
-        
+        Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.73\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  In other words, the spec limits are located at $\pm 3\sigma$ away from the mean.  Therefore, $99.73\%=0.9973$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ parts using Machine 1, then the number of defective screws will be approximately
+        $$(1-0.9973)\times 1,000,000=0.0027\times 1,000,000=2,700$$       
     \end{explanation}
 \end{example}
 
+\begin{question}\label{quest:defParts1}
+    Suppose that a new employee was assigned to Machine 1 and the machine's performance changed as a result.   The output of the machine can now be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=3$.  If a batch of $1,000,000$ is made under these circumstances, how many defective screws do you expect?
+
+    We will start by finding where the spec limits are located in relation to the center for $\sigma=3$.  
+    
+    How far are the spec limits located from the center of this distribution?
+
+    \begin{multipleChoice}
+        \choice{The spec limits are at $\pm \sigma$.}
+        \choice[correct]{The spec limits are at $\pm 2\sigma$.}
+        \choice{The spec limits are at $\pm 3\sigma$.}
+    \end{multipleChoice}
+
+    We will now use the Empirical rule.  Rounded to the nearest integer, what percent of data are located within the spec limits?
+
+Percent of data within spec limits: $\answer{95}\%$
+
+How many defective parts per million do we expect to see?  Round your answer to the nearest integer.
+
+Defective parts per million: $\answer{50000}$ ppm
+
+Based on what you saw in Example \ref{ex:defParts1} and this question, which of the following is true about a normally distributed process?
+
+\begin{multipleChoice}
+    \choice[correct]{If the process mean is unchanged, then greater standard deviation leads to more scrap.}
+    \choice{If the process mean is unchanged, then smaller standard deviation leads to more scrap.}
+    \choice{If the process mean is unchanged, then the amount of scrap remains the same regardless of what happens to standard deviation.}
+\end{multipleChoice}
+    
+\end{question}
+
+Process mean and standard deviation both affect the amount of scrap produced by the process.  The Desmos interactive below allows you to visualize the number of defective parts that result from processes with various means and normal distributions.  Use the slider to change the mean and standard deviation of the distribution and observe how the number of defective parts changes.
 
 \begin{onlineOnly}
 \begin{center} 
@@ -186,6 +230,30 @@ Both fall within specs, but Machine 2 is much better than Machine 1.
 \end{center}
 \end{onlineOnly}
 
+\begin{question}\label{ex:defParts3}
+    Suppose that the output of Machine 2 can be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=1$.  If a batch of $1,000,000$ is ordered, how many defective screws do you expect?  Use the Desmos interactive above to find out.  Round your answer to three decimal places.
+
+    Number of defective parts per million: $\answer{0.002}$ ppm.
+
+    If the mean of Machine 2 shifts to $51.3$, with $\sigma =1$, how many defective parts per million do you expect?  Round your answer to one decimal place.
+
+    Number of defective parts per million: $\answer{1.3}$ ppm.
+\end{question}
+
+\begin{question}\label{prob:specs1}
+At this point you should have an idea of how the histogram needs to be positioned in relation to the spec limits in order to minimize scrap.  Let's summarize these characteristics.  To reduce the number of defective parts the most desirable conditions are (select TWO).
+
+    \begin{selectAll}
+        \choice[correct]{data are centered between the spec limits}
+        \choice{data are shifted to the low side}
+        \choice{data are shifted to the high side}
+        \choice[correct]{the data spread is narrower than the specification limits}
+        \choice{the data are spread from the lower spec limit to the upper, but does not spill over.}
+        \choice{the data spread is wider than the specification limits.}
+    \end{selectAll}
+\end{question}
+
+Different industries use different quality standards to minimize defects.  For example, the \emph{six-sigma} approach, introduced by Motorola in the late 1980s, requires that specification limits are located at least six standard deviations away from the mean.  We can visualize this 
 
 \subsection*{Accuracy and Precision}
 
