@@ -192,11 +192,11 @@ The data in the GeoGebra interactive above shows that the output from both machi
 \end{example}
 
 \begin{question}\label{quest:defParts1}
-    Suppose that a new employee was assigned to Machine 1 and the machine's performance changed as a result.   The output of the machine can now be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=3$.  If a batch of $1,000,000$ is made under these circumstances, how many defective screws do you expect?
+    Suppose that a new employee was assigned to Machine 1 and the machine's performance changed as a result.   The output of the machine can now be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=3$.  Your goal is to approximate the number of defective screws per one million.
 
-    We will start by finding where the spec limits are located in relation to the center for $\sigma=3$.  
+    We will start by finding where the spec limits are located in relation to the center line for $\sigma=3$.  
     
-    How far are the spec limits located from the center of this distribution?
+    Recall that $LSL=44$ mm and $USL=56$ mm. How far are the spec limits from the center of this distribution?
 
     \begin{multipleChoice}
         \choice{The spec limits are at $\pm \sigma$.}
@@ -204,15 +204,15 @@ The data in the GeoGebra interactive above shows that the output from both machi
         \choice{The spec limits are at $\pm 3\sigma$.}
     \end{multipleChoice}
 
-    We will now use the Empirical rule.  Rounded to the nearest integer, what percent of data are located within the spec limits?
+Rounded to the nearest integer, what percent of data is located within the spec limits?
 
 Percent of data within spec limits: $\answer{95}\%$
 
-How many defective parts per million do we expect to see?  Round your answer to the nearest integer.
+How many defective parts per million do we expect to see?  
 
 Defective parts per million: $\answer{50000}$ ppm
 
-Based on what you saw in Example \ref{ex:defParts1} and this question, which of the following is true about a normally distributed process?
+Compare your answer to this question with Example \ref{ex:defParts1}.  Which of the following is true about a normally distributed process?
 
 \begin{multipleChoice}
     \choice[correct]{If the process mean is unchanged, then greater standard deviation leads to more scrap.}
@@ -222,7 +222,7 @@ Based on what you saw in Example \ref{ex:defParts1} and this question, which of 
     
 \end{question}
 
-Process mean and standard deviation both affect the amount of scrap produced by the process.  The Desmos interactive below allows you to visualize the number of defective parts that result from processes with various means and normal distributions.  Use the slider to change the mean and standard deviation of the distribution and observe how the number of defective parts changes.
+Process mean and standard deviation both affect the amount of scrap produced by the process.  The Desmos interactive below allows you to visualize the number of defective parts that result from normally distributed processes with various means and standard deviations.  Use the slider to change the mean and standard deviation of the distribution and observe how the number of defective parts changes.
 
 \begin{onlineOnly}
 \begin{center} 
