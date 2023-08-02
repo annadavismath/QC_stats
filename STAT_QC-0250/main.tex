@@ -109,7 +109,7 @@ Rule 2:  Two out of three consecutive points are on the same side of the center 
  \end{tikzpicture}
 \end{center}
 
-Rule 3: Four out of five points are on the same side of the center line and above $\mu+\sigma$ or below $\mu-\sigma$.
+Rule 3: Four out of five consecutive points are on the same side of the center line and above $\mu+\sigma$ or below $\mu-\sigma$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -353,15 +353,21 @@ What can you say about Samples  26-32:
 
 \subsection*{CASE STUDY: Thermoform production}
 
-In thermoform production, sheets of plastic are heated and molded into a desired shape.  In the Desmos sheet below, we can see the diameters of 80 different thermoform spheres produced in Taiwan.  Notice that the last 20 were too big - something about the production had gone wrong.  Were there warning signs that a problem was coming before it happened?
+In thermoform production, sheets of plastic are heated and molded into a desired shape.  In the Desmos sheet below, we can see the diameters of 80 different thermoform spheres produced in Taiwan.  Notice that the last 20 were too big - something about the production had gone wrong.  Were there warning signs that a problem was coming before it happened?  Could Statistical Process Control be used to detect this problem earlier?
 
 \desmos{lwyjp4jqzh}{800}{600}
 
-The following YouTube video gives some ideas of how we can use the Desmos sheet.
+Below we see an X-bar control chart constructed by computing the mean diameter of every 5 spheres produced.  (Note that this is for demonstration purposes - in actual production there would be sampling done at regular intervals rather than measuring every sphere.)  Let's see how the Nelson rules may have helped in this example.
 
-\youtube{NIg050X6q10}
+\desmos{6rcaatwf5f}{800}{600}
 
-Also included in the Desmos sheet are x-bar control charts for samples of size $n=3$ and $n=5$.  
+\textbf{HOLD EVERYTHING!!!}  The very first sample mean of 34.51 mm is more than three standard deviations from the population mean, so it is below the LCL.  We observe $34.75 - 3(0.076)=34.522>34.51$.  Following Nelsen Rule 1, we halt production and inspect, correcting anything that may seem to be wrong.  Finding nothing out of the ordinary, we resume production.
+
+\textbf{WAIT A MINUTE!!!}  Rule 3 of the Nelsen rules is violated after only 20 thermoforms have been produced, as all 4 sample means are below the center line $f(x)=34.75$ mm.  We should stop and inspect the process.  Notice that if we decide to continue production, we would violate Rule 3 again after another 20 thermoforms are produced, as all remaining sample means are greater than $f(x)=34.75$ mm.
+
+\textbf{THIS PROCESS SEEMS OUT OF CONTROL!!!}  Rule 5 of the Nelsen rules is violated after 30 thermoforms have been produced, as the sample means are increasing throughout the process.
+
+The point here is that by following the Nelsen rules, we would stop production after 5,20,30, and/or 40 thermoforms were produced.  Hopefully this would provide us ample opportunity to inspect and make modifications to the process before continuing, so that the diameters don't continue to grow to the point where they are unusable.
 
 
 \section*{Practice Problems}
