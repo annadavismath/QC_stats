@@ -2,7 +2,7 @@
 \input{../preamble.tex}
 
 \author{D. Davis \and R. Speckert \and N. Shay \and A. Davis}
-\title{Need Title} \license{CC BY-NC-SA 4.0}
+\title{Picture Perfect} \license{CC BY-NC-SA 4.0}
 \begin{document}
 
 \begin{abstract}
@@ -10,21 +10,122 @@
 \maketitle
 
 \begin{onlineOnly}
-\section*{Need Title}
+\section*{Picture Perfect: A Data Collection Activity}
 \end{onlineOnly}
 
-\subsection*{Data Collection Activity}
+\subsection*{Evaluating the Existing Process}
 
-Our best customer placed an order for 100 units of product.  The product is rectangular sheets of silicon that will be sent through a stamping operation to create round wafers. These silicon wafers will be used to manufacture integrated circuit chips. The silicon sheets will be $6.98$cm by $10.79$cm ($2.75$in $\times$ $4.25$in) with a nominal diagonal dimension of $12.85$cm ($5.06$in).  To properly align in the stamping machine, the diagonal specifications must be $12.85$cm $\pm$ $0.15$cm  ($5.06$in $\pm$ $0.06$in).
+Suppose you have been called in to evaluate the process of manufacturing small picture frames.  A picture frame typically consists of the frame, a piece of glass, and a fiberboard back that holds the picture in place. The photo below shows the kind of picture frame the shop manufactures. Note that the fiberboard back is held in place by metal tabs.  
+
+\begin{center}
+         \begin{tikzpicture}
+ \node[inner sep=0pt, anchor=base] (p1) at (0,0)
+   {\includegraphics[height=80mm]{frame.jpg}};
+               \end{tikzpicture}
+       \end{center}
+
+The shop owner is concerned about the quality of the fiberboard backs.  The target size for the back is $7$cm $\times$ $10.8$cm, with a $12.85$cm diagonal (diagonal length has been rounded to the nearest half a millimeter).  The fiberboard has to be small enough to fit into the frame, but big enough to not to slip out of the tabs.  This dictates the specification limits.  Suppose the specs for the diagonal are set to be $12.85\pm 0.4$cm.
 
 \begin{question}\label{quest:qc150_1}
-What are the upper and lower specification limits in cm and inches for the diagonal dimension?
+What are the lower and upper specification limits in cm for the diagonal dimension?
 
-Upper Specification Limit (USL) $=\answer{13}\text{cm}=\answer{5.12}\text{in}$
+Lower Specification Limit (LSL) $=\answer{12.45}\text{cm}$
 
-Lower Specification Limit (LSL) $=\answer{12.7}\text{cm}=\answer{5}\text{in}$
+Upper Specification Limit (USL) $=\answer{13.25}\text{cm}$
 
 \end{question}
+
+\begin{question}\label{quest:qc150_2}
+    Consider the population of fiberboard backs.  The manufacturing process will naturally result in some variability in the length of the diagonal.  If everything is under control, the diagonal measurements will be normally distributed.  Use LSL and USL values from the previous problem to select the most appropriate target mean and standard deviation for the distribution of the diagonal lengths, if we want to adhere to the six-sigma quality standard.
+
+    \begin{multipleChoice}
+        \choice[correct]{$\mu=12.85$, $\sigma= 0.07$}
+        \choice{$\mu=12.85$, $\sigma= 0.1$}
+        \choice{$\mu=12.85$, $\sigma= 0.4$}
+        \choice{$\mu=12.85$, $\sigma= \pm 0.4$}
+    \end{multipleChoice}
+\end{question}
+
+Currently, the fiberboard backs are being cut by two different machines.  We will call them Machine 1 and Machine 2.
+Enter the lower and upper spec limits for the diagonal measurements into the GeoGebra interactive below.  Use the check boxes to display the histograms for the diagonal length measurements for large batches of output produced by Machine 1 and Machine 2. 
+
+\begin{onlineOnly}
+\begin{center} 
+\geogebra{ajtk6jux}{950}{600} 
+\end{center}
+\end{onlineOnly}
+
+How would you characterize the output from Machine 1? Check ALL that apply.
+
+\begin{selectAll}
+\choice[correct]{The process is accurate}
+\choice{The process is precise}
+\choice[correct]{There is a lot of scrap}
+\choice{The process meets the six-sigma quality standard}
+\end{selectAll}
+
+How would you characterize the output from Machine 2? Check ALL that apply.
+
+\begin{selectAll}
+\choice{The process is accurate}
+\choice[correct]{The process is precise}
+\choice{There is a lot of scrap}
+\choice{The process meets the six-sigma quality standard}
+\end{selectAll}
+
+\subsection*{Changing Fiberboard Suppliers}
+
+The dimensions of the frame are given in centimeters, per customer request. Suppose your shop gets a new fiberboard supplier who offers 8.5in $\times$ 11in pieces of fiberboard.  The shop manager suggests that if you cut each piece of fiberboard into eight equal rectangles, as shown below, the result will be ``close enough".
+
+\begin{center}
+\begin{tikzpicture}[scale=0.5]
+\draw[black, thick, fill=yellow,opacity=0.25] (-1,-1) rectangle (23, 9.5);
+ \draw[black, thick, fill=white] (0,0) rectangle (11,8.5);
+ \draw[line width=0.5pt, dashed, gray](5.5,0)--(5.5,8.5);
+  \draw[line width=0.5pt, dashed, gray](2.75,0)--(2.75,8.5);
+   \draw[line width=0.5pt, dashed, gray](8.25,0)--(8.25,8.5);
+    \draw[line width=0.5pt, dashed, gray](0,4.25)--(11,4.25);
+%\node[rotate=90] at (5,4.5)   {fold and tear line};
+\draw[line width=1pt,gray, stealth-](0,-0.5)--(4,-0.5);
+\draw[line width=1pt,gray, -stealth](7,-0.5)--(11,-0.5);
+\node[gray] at (5.5,-0.5)   {11 in};
+\draw[line width=1pt,gray, -stealth](-0.5,2.75)--(-0.5,0);
+\draw[line width=1pt,gray, -stealth](-0.5, 5.75)--(-0.5, 8.5);
+\node[rotate=90, gray] at (-0.5,4.25)   {8.5 in};
+
+\draw[black, thick, fill=white] (17.75,2.75) rectangle (20.5, 7);
+\draw[black, thick, fill=white] (17.5,2.5) rectangle (20.25, 6.75);
+\draw[black, thick, fill=white] (17.25,2.25) rectangle (20, 6.5);
+\draw[black, thick, fill=white] (17,2) rectangle (19.75, 6.25);
+\draw[black, thick, fill=white] (16.75,1.75) rectangle (19.5, 6);
+\draw[black, thick, fill=white] (16.5,1.5) rectangle (19.25, 5.75);
+\draw[black, thick, fill=white] (16.25,1.25) rectangle (19, 5.5);
+ \draw[black, thick, fill=white] (16,1) rectangle (18.75, 5.25);
+
+ \draw[line width=1pt,gray, stealth-](17.75,7.5)--(19,7.5);
+\draw[line width=1pt,gray, -stealth](19,7.5)--(20.5,7.5);
+\node[gray] at (19.25,8)   {2.75 in};
+\draw[line width=1pt,gray, stealth-](21,2.75)--(21,6);
+\draw[line width=1pt,gray, -stealth](21, 6)--(21, 7);
+\node[rotate=90, gray] at (21.5,4.9)   {4.25 in};
+
+\end{tikzpicture}
+
+\end{center}
+
+% Our best customer placed an order for 100 units of product.  The product is rectangular sheets of silicon that will be sent through a stamping operation to create round wafers. These silicon wafers will be used to manufacture integrated circuit chips. The silicon sheets will be $6.98$cm by $10.79$cm ($2.75$in $\times$ $4.25$in) with a nominal diagonal dimension of $12.85$cm ($5.06$in).  To properly align in the stamping machine, the diagonal specifications must be $12.85$cm $\pm$ $0.15$cm  ($5.06$in $\pm$ $0.06$in).
+
+
+
+\begin{question}\label{quest:qc150_3}
+    Is the shop manager being reasonable?  Convert the  dimensions of fiberboard backs to centimeters to find out.  Enter your answers to three decimal places.
+
+    $$2.75\text{in}=2.75\text{in}\times \frac{2.54\text{cm}}{\text{in}}=\answer{6.985}\text{cm}$$
+    $$4.25\text{in}=4.25\text{in}\times \frac{2.54\text{cm}}{\text{in}}=\answer{10.795}\text{cm}$$
+\end{question}
+
+\subsubsection*{Data Collection Activity}
+You will simulate this manufacturing process using $8.5$in $\times$ $11$in sheets of paper.
 
 Supplies needed:
 \begin{itemize}
