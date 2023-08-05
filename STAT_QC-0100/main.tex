@@ -277,13 +277,58 @@ At this point you should have an idea of how the histogram needs to be positione
 
 We will now quantify your observations in Question \ref{prob:specs1}.
 
+\begin{formula}\label{form:Cp}
+
+\begin{center}
+\begin{tikzpicture}
+        \begin{axis}[
+          domain=280:320,
+          xmin=280, xmax=320,
+          ymin=-0.1, ymax=0.3,
+          width=3.5in,
+          xtick={292.5, 295, 297.5,300,302.5,305, 307.5},
+            xticklabels={,,,,,,},
+           % ytick style={draw=none},
+            %yticklabels={},
+            axis x line=center,
+            axis y line=none,
+          %axis lines =middle, xlabel={}, ylabel={},
+          %every axis y label/.style={at=(current axis.above origin),anchor=south},
+           every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]
+      \addplot [very thick,  smooth] {(e^(-0.5*((x-300)/2.5)^2))/(((2*pi)^0.5)*2.5)};
+      \draw [dashed] (300,-0.04) -- (300,0.18);
+      \draw [dashed] (286,-0.08) -- (286,0.2);
+      \draw [dashed] (318,-0.08) -- (318,0.2);
+      \draw [dashed] (292.5,0) -- (292.5,-0.04);
+      \draw [dashed] (307.5,0) -- (307.5,-0.04);
+      \node[rotate=90] at (285,0.1)   {Lower Spec Limit};
+      \node[rotate=90] at (319,0.1)   {Upper Spec Limit};
+      \draw[line width=1pt, stealth-](300,-0.02)--(305.5,-0.02);
+      \draw[line width=1pt, stealth-](307.5,-0.02)--(305.5,-0.02);
+      \draw[line width=1pt, stealth-](300,-0.02)--(295.5,-0.02);
+      \draw[line width=1pt, -stealth](295.5,-0.02)--(292.5,-0.02);
+      \node[] at (296.25,-0.035)   {$3\sigma$};
+      \node[] at (304.25,-0.035)   {$3\sigma$};
+      \draw[line width=1pt, -stealth](300,-0.06)--(318,-0.06);
+      \draw[line width=1pt, -stealth](300,-0.06)--(286,-0.06);
+       \node[] at (302,-0.075)   {Spec Width};
+       \node[] at (300,0.19)   {Mean};
+          \end{axis}
+        \end{tikzpicture}
+\end{center}
+
+$$Cp=\frac{\text{Spec Width}}{6\sigma}=\frac{\text{Upper Spec Limit}-\text{Lower Spec Limit}}{6\sigma}$$
+
+$$Cpk=\frac{\text{Distance from Mean to the nearest Spec Limit}}{3\sigma}$$
+\end{formula}
 
 
 Different industries use different quality standards to minimize defects.  For example, the \emph{six-sigma} approach, introduced by Motorola in the late 1980s, requires that the mean is centered between the specification limits, and that specification limits are located at least six standard deviations away from the mean.  Use the slider to increase/decrease the standard deviation of the process depicted below and see when the process meets the six-sigma quality standard and when it does not.
 
 \begin{onlineOnly}
 \begin{center} 
-\geogebra{uu7sxwfs}{900}{600} 
+\geogebra{uu7sxwfs}{900}{500} 
 \end{center}
 \end{onlineOnly}
 
