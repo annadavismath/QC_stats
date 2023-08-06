@@ -278,7 +278,7 @@ At this point you should have an idea of how the histogram needs to be positione
 We will now quantify your observations in Question \ref{prob:specs1}.
 
 \begin{center}
-\begin{tikzpicture}
+\begin{tikzpicture}[scale=1.5]
         \begin{axis}[
           domain=280:320,
           xmin=280, xmax=320,
@@ -323,6 +323,42 @@ $$Cp=\frac{\text{Spec Width}}{6\sigma}=\frac{\text{Upper Spec Limit}-\text{Lower
 \begin{formula}\label{form:Cpk}
 $$Cpk=\frac{\text{Distance from Mean to the nearest Spec Limit}}{3\sigma}$$
 \end{formula}
+
+\begin{example}
+    Given the following illustration of the process, find $Cp$ and $Cpk$.  What do the numbers tell us about the process?
+    \begin{center}
+\begin{tikzpicture}[scale=1.5]
+        \begin{axis}[
+          domain=-6.5:6.5,
+          xmin=-6.5, xmax=6.5,
+          ymin=-0.3, ymax=0.7,
+          width=3.5in,
+          xtick={-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6},
+            xticklabels={$211.3$,,,,,,$\mu=211.6$,,,,$211.8$,,},
+            axis x line=center,
+            axis y line=none,
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]
+      \addplot [very thick,  smooth] {(e^(-0.5*(x)^2))/((2*pi)^0.5)};
+      \draw [dashed] (0,0) -- (0,0.5);
+      \draw [dashed] (-6,0) -- (-6,0.5);
+      \draw [dashed] (4,0) -- (4,0.5);
+      \node[rotate=90] at (-6.3,0.25)   {LSL};
+      \node[rotate=90] at (4.3,0.25)   {USL};
+      \node[] at (0,-0.14)   {$\sigma=0.05$};
+      \end{axis}
+        \end{tikzpicture}
+\end{center}
+
+\begin{explanation}
+    $$Cp=\frac{211.8-211.3}{6(0.05)}=\frac{0.5}{0.3}\approx 1.67$$
+This value indicates that the bell curve is narrower than the spec width.  This is good.
+
+$$Cpk=\frac{211.8-211.6}{3(0.05)}=\frac{0.2}{0.15}\approx 1.33$$
+Unlike $Cp$, $Cpk$ takes the position of the curve within the spec limits into account.  In this case $Cp\neq Cpk$ because the bell curve is not centered between the spec limits.  We use the spec limit closest to the mean to compute $Cpk$.  This value is not as good as $Cp$, but it is still greater than 1.  
+\end{explanation}
+
+\end{example}
 
 
 Different industries use different quality standards to minimize defects.  For example, the \emph{six-sigma} approach, introduced by Motorola in the late 1980s, requires that the mean is centered between the specification limits, and that specification limits are located at least six standard deviations away from the mean.  Use the slider to increase/decrease the standard deviation of the process depicted below and see when the process meets the six-sigma quality standard and when it does not.
