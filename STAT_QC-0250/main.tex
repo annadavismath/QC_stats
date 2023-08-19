@@ -25,9 +25,11 @@ In \emph{thermoform production}, plastic sheets are fed into machines which can 
 
 In the following Desmos graph we can view 16 samples of 5 diameters measured during thermoform production in Taiwan.  From prior production runs it was known that the mean diameter was $\mu = 34.75$ mm, and the standard deviation was $\sigma = 0.17$ mm.  Let's assume that the samples are taken every hour.  For the ``surprise" to fit inside the plastic shell, and for the plastic shell to fit inside the chocolate candy, specification limits are set to $34.75\pm 0.55$ mm.  Any thermoform with a diameter greater than 35.3 mm or less than 34.2 mm is unusable.
  
-\desmos{uxhaiyqoso}{800}{600}
+\desmos{snvmxxizpj}{800}{600}
 
-We can see that after the first 12 hours of production, most of the diameters that were sampled were too big, and so many thermoforms had to be scrapped.  The point of Statistical Process Control is to detect signs of a process being out of control, so that corrections can be made and waste can be reduced.  Were there signs that this thermoform production process was out of control earlier?  In this section we will see how control charts can be used to detect an out of control process before scrap is produced.  
+We can see that after the first 12 hours of production, most of the diameters that were sampled were too big, and so many thermoforms had to be scrapped.  The point of Statistical Process Control is to detect signs of a process being out of control early, so that corrections can be made and waste can be reduced.  
+
+Observe that in the first 12 hours most diameters were within the spec limits.  This may seem like a reassuring sign,  but is it possible that even the early samples pointed to this thermoform production process being out of control?  In this section we will see how control charts could have been used to detect an out of control process early, and make adjustments before scrap is produced.  
 
 \subsection*{When is it time to investigate?}
 
@@ -41,6 +43,7 @@ One of the fundamental principles of statistical process control is that if a pr
 
  
 \begin{definition}[Nelson Rules]\label{def:nelson}
+
 \textbf{Rule 1:}  One point falls above UCL or below LCL.
 
 \begin{center}
