@@ -2,7 +2,7 @@
 \input{../preamble.tex}
 
 \author{Robert Kenney \and Paul Zachlin \and Nicholas Shay}
-\title{X-bar Charts} \license{CC BY-NC-SA 4.0}
+\title{An Application of X-bar Charts to Manufacturing} \license{CC BY-NC-SA 4.0}
 \begin{document}
 
 \begin{abstract}
@@ -11,8 +11,10 @@ We study basic ideas behind the use of control charts in industry.
 \maketitle
 
 \begin{onlineOnly}
-\section*{X-bar Charts}
+\section*{An Application of X-bar Charts to Manufacturing}
 \end{onlineOnly}
+
+In \emph{thermoform production}, plastic sheets are fed into machines which can turn them into molded plastic objects which are used in everyday life.  As an example, consider the molded plastic container holding the ``surprise" inside of the chocolate candy in the picture below.
 
 \begin{center}
         \begin{tikzpicture}
@@ -21,19 +23,25 @@ We study basic ideas behind the use of control charts in industry.
            \end{tikzpicture}
       \end{center}
 
+In the following Desmos graph we can view 16 samples of 5 diameters measured during thermoform production in Taiwan.  From prior production runs it was known that the mean diameter was $\mu = 34.75$ mm, and the standard deviation was $\sigma = 0.17$ mm.  Let's assume that the samples are taken every hour.  For the ``surprise" to fit inside the plastic shell, and for the plastic shell to fit inside the chocolate candy, specification limits are set to $34.75\pm 0.55$ mm.  Any thermoform with a diameter greater than 35.3 mm or less than 34.2 mm is unusable.
+ 
+\desmos{uxhaiyqoso}{800}{600}
 
-
-
-In the last section we introduced two kinds of control charts, x-bar chart and R-chart.  In this section we will 
-
-
-
+We can see that after the first 12 hours of production, most of the diameters that were sampled were too big, and so many thermoforms had to be scrapped.  The point of Statistical Process Control is to detect signs of a process being out of control, so that corrections can be made and waste can be reduced.  Were there signs that this thermoform production process was out of control earlier?  In this section we will see how control charts can be used to detect an out of control process before scrap is produced.  
 
 \subsection*{When is it time to investigate?}
 
-\href{https://www.qimacros.com/control-chart/nelson-rules/}{Nelson rules} for detecting an out-of-control process:
+There will always be some variation in any process.  %At this point you have studied enough statistics to know that a very important idea is to determine when variation is \emph{significant} (i.e. worthy of further investigation).
+One of the fundamental principles of statistical process control is that if a process is acting in a non-random way, the process can be improved.  Control charts are used to detect non-random behavior. In the previous section we discussed several general trends seen in control charts that indicate an out-of-control process.  We now formalize our previous observations with a set of rules.  The
+ \href{https://www.qimacros.com/control-chart/nelson-rules/}{Nelson rules} for control charts is a common set of rules used in manufacturing to determine when a process may be out-of-control.  %We consider any of the following eight scenarios to be significant. 
 
-Rule 1:  One point falls above UCL or below LCL.
+ Recall, from the previous section, that control limits are typically set at three standard deviations away from the mean, where standard deviation, $\sigma_{\bar{X}}$ is given by the Central Limit Theorem to be 
+ $$\sigma_{\bar{X}}=\frac{\sigma}{\sqrt{n}}$$
+ where $\sigma$ is population standard deviation and $n$ is the sample size.
+
+ 
+\begin{definition}[Nelson Rules]\label{def:nelson}
+\textbf{Rule 1:}  One point falls above UCL or below LCL.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -44,13 +52,13 @@ Rule 1:  One point falls above UCL or below LCL.
 \draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
 \draw[thin,gray!40] (0,-4) grid (11,4);
 \draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
- \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
-\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma_{\bar{X}}$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma_{\bar{X}}$}--(11,-3)node[right=1mm]{LCL};
 
-\node[left=1mm] at (0,1){$\mu+\sigma$};
-\node[left=1mm] at (0,-1){$\mu-\sigma$};
-\node[left=1mm] at (0,2){$\mu+2\sigma$};
-\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+\node[left=1mm] at (0,1){$\mu+\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-1){$\mu-\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,2){$\mu+2\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma_{\bar{X}}$};
 
  \node (A) at (1,1.5) [circle,fill=black,scale=0.6]{};
  \node (B) at (2,-1.2) [circle,fill=black,scale=0.6]{};
@@ -76,7 +84,7 @@ Rule 1:  One point falls above UCL or below LCL.
  \end{tikzpicture}
 \end{center}
 
-Rule 2:  Two out of three consecutive points are on the same side of the center line and above $\mu+2\sigma$ or below $\mu-2\sigma$.
+\textbf{Rule 2:}  Two out of three consecutive points are on the same side of the center line and above $\mu+2\sigma_{\bar{X}}$ or below $\mu-2\sigma_{\bar{X}}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -87,13 +95,13 @@ Rule 2:  Two out of three consecutive points are on the same side of the center 
 \draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
 \draw[thin,gray!40] (0,-4) grid (11,4);
 \draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
- \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
-\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma_{\bar{X}}$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma_{\bar{X}}$}--(11,-3)node[right=1mm]{LCL};
 
-\node[left=1mm] at (0,1){$\mu+\sigma$};
-\node[left=1mm] at (0,-1){$\mu-\sigma$};
-\node[left=1mm] at (0,2){$\mu+2\sigma$};
-\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+\node[left=1mm] at (0,1){$\mu+\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-1){$\mu-\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,2){$\mu+2\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma_{\bar{X}}$};
 
  \node (A) at (1,1.5) [circle,fill=black,scale=0.6]{};
  \node (B) at (2,-1.2) [circle,fill=black,scale=0.6]{};
@@ -119,7 +127,7 @@ Rule 2:  Two out of three consecutive points are on the same side of the center 
  \end{tikzpicture}
 \end{center}
 
-Rule 3: Four out of five consecutive points are on the same side of the center line and above $\mu+\sigma$ or below $\mu-\sigma$.
+\textbf{Rule 3:} Four out of five consecutive points are on the same side of the center line and above $\mu+\sigma_{\bar{X}}$ or below $\mu-\sigma_{\bar{X}}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -130,13 +138,13 @@ Rule 3: Four out of five consecutive points are on the same side of the center l
 \draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
 \draw[thin,gray!40] (0,-4) grid (11,4);
 \draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
- \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
-\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma_{\bar{X}}$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma_{\bar{X}}$}--(11,-3)node[right=1mm]{LCL};
 
-\node[left=1mm] at (0,1){$\mu+\sigma$};
-\node[left=1mm] at (0,-1){$\mu-\sigma$};
-\node[left=1mm] at (0,2){$\mu+2\sigma$};
-\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+\node[left=1mm] at (0,1){$\mu+\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-1){$\mu-\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,2){$\mu+2\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma_{\bar{X}}$};
 
  \node (A) at (1,1.5) [circle,fill=red,scale=0.8]{};
  \node (B) at (2,1.2) [circle,fill=red,scale=0.8]{};
@@ -162,7 +170,7 @@ Rule 3: Four out of five consecutive points are on the same side of the center l
  \end{tikzpicture}
 \end{center}
 
-Rule 4: Eight consecutive points are on the same side of the center line.
+\textbf{Rule 4:} Eight consecutive points are on the same side of the center line.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -173,13 +181,13 @@ Rule 4: Eight consecutive points are on the same side of the center line.
 \draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
 \draw[thin,gray!40] (0,-4) grid (11,4);
 \draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
- \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
-\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma_{\bar{X}}$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma_{\bar{X}}$}--(11,-3)node[right=1mm]{LCL};
 
-\node[left=1mm] at (0,1){$\mu+\sigma$};
-\node[left=1mm] at (0,-1){$\mu-\sigma$};
-\node[left=1mm] at (0,2){$\mu+2\sigma$};
-\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+\node[left=1mm] at (0,1){$\mu+\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-1){$\mu-\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,2){$\mu+2\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma_{\bar{X}}$};
 
  \node (A) at (1,0.5) [circle,fill=red,scale=0.8]{};
  \node (B) at (2,0.3) [circle,fill=red,scale=0.8]{};
@@ -205,7 +213,7 @@ Rule 4: Eight consecutive points are on the same side of the center line.
  \end{tikzpicture}
 \end{center}
 
-Rule 5: Six consecutive points are ascending/decending. 
+\textbf{Rule 5:} Six consecutive points are ascending/decending. 
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -216,13 +224,13 @@ Rule 5: Six consecutive points are ascending/decending.
 \draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
 \draw[thin,gray!40] (0,-4) grid (11,4);
 \draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
- \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
-\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma_{\bar{X}}$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma_{\bar{X}}$}--(11,-3)node[right=1mm]{LCL};
 
-\node[left=1mm] at (0,1){$\mu+\sigma$};
-\node[left=1mm] at (0,-1){$\mu-\sigma$};
-\node[left=1mm] at (0,2){$\mu+2\sigma$};
-\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+\node[left=1mm] at (0,1){$\mu+\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-1){$\mu-\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,2){$\mu+2\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma_{\bar{X}}$};
 
  \node (A) at (1,0.5) [circle,fill=black,scale=0.6]{};
  \node (B) at (2,1.3) [circle,fill=red,scale=0.8]{};
@@ -248,11 +256,11 @@ Rule 5: Six consecutive points are ascending/decending.
  \end{tikzpicture}
 \end{center}
 
-Rule 6: Fifteen consecutive points are between $\mu-\sigma$ and $\mu+\sigma$.  This is known as ``hugging the center line".
+\textbf{Rule 6:} Fifteen consecutive points are between $\mu-\sigma_{\bar{X}}$ and $\mu+\sigma_{\bar{X}}$.  This is known as ``hugging the center line".
 
-Rule 7: Fourteen consecutive points form an alternating up/down pattern.
+\textbf{Rule 7:} Fourteen consecutive points form an alternating up/down pattern.
 
-Rule 8:  Eight consecutive points are above $\mu+\sigma$ or below $\mu-\sigma$.
+\textbf{Rule 8:}  Eight consecutive points are above $\mu+\sigma_{\bar{X}}$ or below $\mu-\sigma_{\bar{X}}$.
 
 \begin{center}
 \begin{tikzpicture}[scale=1]
@@ -263,13 +271,13 @@ Rule 8:  Eight consecutive points are above $\mu+\sigma$ or below $\mu-\sigma$.
 \draw[black, thick, fill=red,opacity=0.25] (0,2) rectangle (11, 3);
 \draw[thin,gray!40] (0,-4) grid (11,4);
 \draw[line width=2pt](0,0)node[left=1mm]{$\mu$}--(11,0)node[right=1mm]{CL} ;
- \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma$}--(11,3)node[right=1mm]{UCL};
-\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma$}--(11,-3)node[right=1mm]{LCL};
+ \draw[line width=1pt,red, dashed](0,3)node[left=1mm]{$\mu+3\sigma_{\bar{X}}$}--(11,3)node[right=1mm]{UCL};
+\draw[line width=1pt,red, dashed](0,-3)node[left=1mm]{$\mu-3\sigma_{\bar{X}}$}--(11,-3)node[right=1mm]{LCL};
 
-\node[left=1mm] at (0,1){$\mu+\sigma$};
-\node[left=1mm] at (0,-1){$\mu-\sigma$};
-\node[left=1mm] at (0,2){$\mu+2\sigma$};
-\node[left=1mm] at (0,-2){$\mu-2\sigma$};
+\node[left=1mm] at (0,1){$\mu+\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-1){$\mu-\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,2){$\mu+2\sigma_{\bar{X}}$};
+\node[left=1mm] at (0,-2){$\mu-2\sigma_{\bar{X}}$};
 
  \node (A) at (1,0.5) [circle,fill=black,scale=0.6]{};
  \node (B) at (2,1.3) [circle,fill=red,scale=0.8]{};
@@ -294,6 +302,8 @@ Rule 8:  Eight consecutive points are above $\mu+\sigma$ or below $\mu-\sigma$.
 
  \end{tikzpicture}
 \end{center}
+\end{definition}
+See if you can apply the Nelson rules in the following problem.
 
 \begin{problem}\label{prob:controlChartWithSlider}
 Suppose that a manufacturing process is known to have a normal distribution with a mean $\mu=3.5$, and standard deviation $\sigma=2$.  A random sample of size $n=4$ is collected every hour to monitor the manufacturing process.  The distribution of sample means (sampling distribution) will be normal and $$\mu_{\bar{x}}=\answer{3.5},\quad \sigma_{\bar{x}}=\answer{1}$$
@@ -363,21 +373,19 @@ What can you say about Samples  26-32:
 
 \subsection*{CASE STUDY: Thermoform production}
 
-In thermoform production, sheets of plastic are heated and molded into a desired shape.  In the Desmos sheet below, we can see the diameters of 80 different thermoform spheres produced in Taiwan.  Notice that the last 20 were too big - something about the production had gone wrong.  Were there warning signs that a problem was coming before it happened?  Could Statistical Process Control be used to detect this problem earlier?
+We return now to the application of we began this section with, an application of control charts to thermoform production.
 
-\desmos{lwyjp4jqzh}{800}{600}
+Below we see an X-bar control chart constructed by computing the mean diameter of each sample of size $n=5$ we obtained.  Let's see how the Nelson rules may have helped us to reduce waste in this example.
 
-Below we see an X-bar control chart constructed by computing the mean diameter of every 5 spheres produced.  (Note that this is for demonstration purposes - in actual production there would be sampling done at regular intervals rather than measuring every sphere.)  Let's see how the Nelson rules may have helped in this example.
+\desmos{f1piwpyfuh}{800}{600}
 
-\desmos{6rcaatwf5f}{800}{600}
+\textbf{HOLD EVERYTHING!!!}  The very first sample mean of 34.51 mm is more than three sample standard deviations from the population mean, so it is below the LCL.  We observe $34.75 - 3(0.076)=34.522>34.51$.  Following Nelson Rule 1, we halt production and inspect, correcting anything that may seem to be wrong.  Finding nothing out of the ordinary, we resume production.
 
-\textbf{HOLD EVERYTHING!!!}  The very first sample mean of 34.51 mm is more than three standard deviations from the population mean, so it is below the LCL.  We observe $34.75 - 3(0.076)=34.522>34.51$.  Following Nelsen Rule 1, we halt production and inspect, correcting anything that may seem to be wrong.  Finding nothing out of the ordinary, we resume production.
+\textbf{WAIT A MINUTE!!!}  Our ninth sample mean is more than three standard deviations above the center line $\mu=34.75$ mm.  We should stop and inspect the process.
 
-\textbf{WAIT A MINUTE!!!}  Rule 3 of the Nelsen rules is violated after only 20 thermoforms have been produced, as all 4 sample means are below the center line $f(x)=34.75$ mm.  We should stop and inspect the process.  Notice that if we decide to continue production, we would violate Rule 3 again after another 20 thermoforms are produced, as all remaining sample means are greater than $f(x)=34.75$ mm.
+\textbf{THIS PROCESS SEEMS OUT OF CONTROL!!!}  Our tenth sample mean is also more than three standard deviations above the center line $\mu=34.75$ mm.  We should stop and inspect the process, and take corrective action.
 
-\textbf{THIS PROCESS SEEMS OUT OF CONTROL!!!}  Rule 5 of the Nelsen rules is violated after 30 thermoforms have been produced, as the sample means are increasing throughout the process.
-
-The point here is that by following the Nelsen rules, we would stop production after 5,20,30, and/or 40 thermoforms were produced.  Hopefully this would provide us ample opportunity to inspect and make modifications to the process before continuing, so that the diameters don't continue to grow to the point where they are unusable.
+The point here is that by following the Nelson rules, we would investigate during the first hour of production and again after 9 or 10 hours.  Hopefully this would provide us ample opportunity to inspect and make modifications to the process before continuing, so that the diameters don't continue to grow to the point where they are unusable.
 
 
 \section*{Practice Problems}
