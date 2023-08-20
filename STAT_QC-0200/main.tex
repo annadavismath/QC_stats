@@ -6,7 +6,7 @@
 \begin{document}
 
 \begin{abstract}
-We explore an application of concepts related to the normal distribution to manufacturing.
+We explore an application to manufacturing of concepts related to the normal distribution.
 \end{abstract}
 \maketitle
 
@@ -17,7 +17,7 @@ We explore an application of concepts related to the normal distribution to manu
 \subsection*{Out of Control}
 
 \begin{exploration}\label{exp:OJ}
-  A machine at a juice factory is set to fill juice bottles with 300 ml of juice.  If the process is operating normally, the mean amount of juice per bottle is historically known to be normally distributed with $\mu=300$ ml, and standard deviation of $\sigma=2$ ml. To check how well the process is running the factory routinely samples their output to avoid under-filling or over-filling the bottles.  Six samples of size $n=4$ are shown below.
+  A machine at a juice factory is set to fill juice bottles with 300 ml of juice.  If the process is operating properly, the mean amount of juice per bottle is historically known to be normally distributed with $\mu=300$ ml, and standard deviation of $\sigma=2$ ml. To check how well the process is running the factory routinely samples their output to avoid under-filling or over-filling the bottles.  Six samples of size $n=4$ are shown below.
 
 \begin{center}
         \begin{tikzpicture}
@@ -26,7 +26,7 @@ We explore an application of concepts related to the normal distribution to manu
            \end{tikzpicture}
       \end{center}
 
-Variability is a normal part of any manufacturing process.  The first four samples are depicted to represent amounts close to 300 ml, and a reasonable amount of variation.  Samples 5 and 6 are sketched to illustrate a process gone wrong.  If you compare samples 5 and 6 carefully, you will see that each sample points to a different kind of problem with the process.
+Variability is inherent in all manufacturing processes.  The first four samples are depicted to represent amounts close to 300 ml, and a reasonable amount of variation.  Samples 5 and 6 are designed to illustrate a process gone wrong.  If you compare samples 5 and 6 carefully, you will see that each sample points to a different kind of problem with the process.
 
 Samples are collected to gauge the current state of the process.  What does sample 5 indicate about the process?
 
@@ -48,21 +48,21 @@ What does sample 6 indicate about the process?
 
 Variation is a natural part of any manufacturing process.  
 
-\emph{Natural cause variation} or \emph{common cause variation} is a result interactions between people, equipment, method, material, and environment.  This variation is a result of the whole system, not assignable to a particular incident or part.  It may be reduced ONLY by changing the system.
+\emph{Natural cause variation} or \emph{common cause variation} is a result of interactions between people, equipment, method, material, and environment.  This variation is a result of the whole system, not assignable to a particular incident or part.  It may be reduced ONLY by changing the system.
 
 \emph{Assignable cause variation} or \emph{special cause variation} is a result of a particular, assignable incident or process part. This type of variation may be easy to identify and fix with a ``tweak".
 
-\emph{in-control process} 
+A process is said to be \emph{in-control}  
 
 \emph{out-of-control process} 
 
 Samples 5 and 6 suggest that the process is out of control, statistical analysis will help us determine whether or not this is the case. 
 
 \subsection*{Something significant...}
-Let's take a look at the data corresponding to the graphic in Exploration \ref{exp:OJ}.  In the table below, individual volumes are listed for each sample along with numerical summaries.  You are familiar with sample mean ($\bar{x}$) and sample standard deviation ($s$).  You may or may not have seen the  \emph{range}, denoted by $R$.  The range, just like standard deviation, is a measure of spread of data.  It is given by the difference between the largest and the smallest values in the sample.  
+Let's take a look at the data corresponding to the graphic in Exploration \ref{exp:OJ}.  In the table below, individual volumes are listed for each sample along with numerical summaries.  You are familiar with the statistics sample mean ($\bar{x}$) as a measure of center and sample standard deviation ($s$) as a measure of spread.  Another measure of spread is the  \emph{range} of the sample, denoted by $R$.  The range is the difference between the largest and the smallest values in the sample.  
 $$R=\text{largest data point}-\text{smallest data point}$$
 
-Both range ($R$) and sample standard deviation ($s$) can be used to estimate population standard deviation ($\sigma$), but because the range takes into account only the two extreme values in the sample, it fails to capture the nuances of the spread, like standard deviation does.  For small samples ($n\leq 6$), either $R$ or $s$ can be used to estimate $\sigma$ with approximately the same efficiency.  As a result, when dealing with small samples, range is typically preferred over standard deviation due to ease of computations. (Montgomery)
+Both range ($R$) and sample standard deviation ($s$) can be used to estimate population standard deviation ($\sigma$), but because the range takes into account only the two extreme values in the sample, it fails to capture many features of the spread that the standard deviation does.  For small samples ($n\leq 6$), either $R$ or $s$ can be used to estimate $\sigma$ with approximately the same efficiency.  As a result, when dealing with small samples, range is often preferred over standard deviation due to ease of computation. (Montgomery)
 
 Compute $R$ for samples 3 and 6 and enter your answers in the cells provided.
 
@@ -103,7 +103,7 @@ Compute $R$ for samples 3 and 6 and enter your answers in the cells provided.
 \end{tabular}
 \end{center}
 
-Observe that sample mean for sample 5 is considerably lower than the other sample means, and also lower than the presumed population mean ($\mu=300$).  Observe also that the volumes in sample 6 are more spread out than the volumes in the other samples, as indicated by the magnitudes of $R$ and $s$.  Is this part of the natural variation inherent in any manufacturing process, or is this an indication that the process is no longer in control?  The following questions will guide you to the answer.
+Observe that sample mean for Sample 5 is considerably lower than the other sample means, and also lower than the presumed population mean ($\mu=300$).  Observe also that the volumes in Sample 6 are more spread out than the volumes in the other samples, as indicated by the magnitudes of $R$ and $s$.  Is this part of the natural variation inherent in any manufacturing process, or is this an indication that the process is no longer in control?  The following questions will guide you to the answer.
 
 \begin{question}\label{quest:popBellCurve}
 Recall that this population is normally distributed with $\mu=300$ ml, and $\sigma=2$ ml.  
@@ -111,7 +111,12 @@ Recall that this population is normally distributed with $\mu=300$ ml, and $\sig
 Select the most appropriate graph to represent the historically established population distribution.
 
 \begin{hint}
-    Use the Empirical Rule.
+    One diagram does not have the correct center.  To decide between the other two, recall that the empirical rule tells us in a normal distribution:
+    \begin{itemize}
+        \item Approximately 68\% of the data values lie within one standard deviation from the mean.
+        \item Approximately 95\% of the data values lie within two standard deviations from the mean.
+        \item Approximately 99.7\% of the data values lie within three standard deviations from the mean.
+    \end{itemize}
 \end{hint}
 
 \begin{multipleChoice}
@@ -134,6 +139,7 @@ Select the most appropriate graph to represent the historically established popu
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
       \addplot [very thick,  smooth] {(e^(-0.5*((x-300)/2)^2))/(((2*pi)^0.5)*2)};
+      \draw [dashed] (300,0) -- (300,0.2);
       %    \node at (axis cs:320, 0.025 ) [anchor=west] {$A$};
           \end{axis}
         \end{tikzpicture}
@@ -156,6 +162,7 @@ Select the most appropriate graph to represent the historically established popu
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
       \addplot [very thick,  smooth] {(e^(-0.5*((x-300)/2.5)^2))/(((2*pi)^0.5)*2.5)};
+      \draw [dashed] (300,0) -- (300,0.16);
           %\node at (axis cs:395, 0.25 ) [anchor=west] {$B$};
           \end{axis}
         \end{tikzpicture}
@@ -178,6 +185,7 @@ Select the most appropriate graph to represent the historically established popu
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
       \addplot [very thick,  smooth] {(e^((-(x-296.25)^2)/(2*2^2)))/(2*pi*2^2)};
+      \draw [dashed] (296.25,0) -- (296.25,0.04);
          % \node at (axis cs:405, 0.025 ) [anchor=west] {$C$};
           \end{axis}
         \end{tikzpicture}
@@ -193,7 +201,7 @@ Select the most appropriate graph to represent the historically established popu
     $$\mu_{\bar{X}}=\answer{300},\quad \sigma_{\bar{X}}=\answer{1}$$
 
 \begin{hint}
-    Use the Central Limit Theorem.
+    Use the formulas $\mu_{\bar{X}}=\mu$ and $\sigma_{\bar{X}}=\frac{\sigma}{\sqrt{n}}$ from the Central Limit Theorem.
 \end{hint}    
 
 Select the most appropriate graph to represent the sampling distribution for $n=4$.
@@ -218,6 +226,7 @@ Select the most appropriate graph to represent the sampling distribution for $n=
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
       \addplot [very thick,  smooth] {(e^(-0.5*((x-300)/2)^2))/(((2*pi)^0.5)*2)};
+      \draw [dashed] (300,0) -- (300,0.2);
       %    \node at (axis cs:320, 0.025 ) [anchor=west] {$A$};
           \end{axis}
         \end{tikzpicture}
@@ -240,6 +249,7 @@ Select the most appropriate graph to represent the sampling distribution for $n=
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
       \addplot [very thick,  smooth] {(e^(-0.5*((x-300)/2.5)^2))/(((2*pi)^0.5)*2.5)};
+      \draw [dashed] (300,0) -- (300,0.16);
           %\node at (axis cs:395, 0.25 ) [anchor=west] {$B$};
           \end{axis}
         \end{tikzpicture}
@@ -262,6 +272,7 @@ Select the most appropriate graph to represent the sampling distribution for $n=
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
       \addplot [very thick,  smooth] {(e^((-(x-300)^2)/(2*1^2)))/(2*pi*1^2)};
+      \draw [dashed] (300,0) -- (300,0.16);
          % \node at (axis cs:405, 0.025 ) [anchor=west] {$C$};
           \end{axis}
         \end{tikzpicture}
@@ -278,7 +289,7 @@ Now that we know what the sampling distribution should look like, let's take a l
 \end{center}
 \end{onlineOnly}
 
-Observe that all sample means, with the exception of sample 5, are located in the green zone near the center of the graph.  The green zone, also known as Zone 1, is located between $\mu -\sigma$ and $\mu+\sigma$.  From the Empirical Rule, we know that approximately $68\%$ of data are located in this zone. 
+Observe that all sample means, with the exception of sample 5, are located in the green zone near the center of the graph.  The green zone, also known as Zone 1, is located between $\mu_{\bar{X}} -\sigma_{\bar{X}}$ and $\mu_{\bar{X}}+\sigma_{\bar{X}}$.  From the Empirical Rule, we know that approximately $68\%$ of data are located in this zone. 
 
 Sample 5 mean is located more than three standard deviations away from the mean.  From the Empirical Rule, we know that approximately $99.7\%$ of data are located within three standard deviations from the mean.  Therefore, the probability of sample 5, or a more extreme sample, occurring is very near zero.  What can this tell us?
 
@@ -296,13 +307,22 @@ To monitor a process over time, we will mark times (or sample numbers) along the
 \end{center}
 \end{onlineOnly}
 
-The diagram above is an example of a \emph{Control Chart}.  Control charts are used by technicians and engineers supervising manufacturing processes to track sample means and spread in order to quickly detect a process no longer in control.  There are several types of control charts.  In the next section we will examine two most commonly used types.
+The diagram above is an example of a \emph{Control Chart}.  Control charts are used by technicians and engineers supervising manufacturing processes to track sample means and spread in order to quickly detect a process no longer in control.  
+
+The following is a list of some red flags that technicians look for in a control chart:
+\begin{itemize}
+    \item A point outside of control limits (e.g. Sample 5).  Such a sample is highly unlikely if the process is functioning properly, and indicates that the process is out of control.
+    \item Cyclic patterns may point to environmental fluctuations (e.g. cooler temperatures at night and higher temperatures during the day) or operator fatigue.  Such patterns indicate a presense of non-random factors that need to be investigated.  
+    \item A continuous upward/downward trend may indicate gradual equipment wear.
+    \item A sudden shift in the height of the points may indicate introduction of new workers or a change in raw materials.
+\end{itemize}
+This list will give rise to a set of rules for interpreting control charts in the next section.
 
 \subsection*{Control Charts}
 
-To make sure that a process is in control, it is essential to monitor variability as well as means.  In the previous section, we presented a control chart for sample means.  This kind of chart is called an \emph{x-bar chart}.  To monitor variability, either range ($R$) or sample standard deviation ($s$) can be used.  As discussed earlier, $R$ is much easier to compute than $s$, and produces similar results for small samples ($n\leq 6$).  As a result, \emph{R-charts}, which monitor the range, are used more often than \emph{s-charts}.
+To make sure that a process is in control, it is essential to monitor variability as well as means.  Earlier, we presented a control chart for sample means.  This kind of chart is called an \emph{X-bar chart}.  To monitor variability, either range (R) or sample standard deviation ($s$) can be used.  As discussed earlier, $R$ is much easier to compute than $s$, and produces similar results for small samples ($n\leq 6$).  As a result, \emph{R-charts}, which monitor the range, are used more often than \emph{s-charts}.
 
-Let's return to our juice bottle example to examine what the x-bar chart and the R-chart tell us when taken together.  The following charts were generated in RStudio using the qcc package.
+Let's return to our juice bottle example to examine what the X-bar chart and the R-chart tell us when taken together.  The following charts were generated in RStudio using the qcc package.
 
 \begin{center}
          \begin{tikzpicture}
@@ -313,17 +333,7 @@ Let's return to our juice bottle example to examine what the x-bar chart and the
             \end{tikzpicture}
        \end{center}
 
-This example highlights the reason why x-bar charts and R-charts should be used together.  The x-bar chart was sufficient to spot the problem with sample 5.  The problem with sample 6, however, would have been missed if we had used the x-bar chart alone. 
-
-
-
-
-\section*{Rules}
-Write out Whatever rules we decide to use.  
-
-This is where I think my example from the next section would fit to prepare students for the case study.
-
-
+This example highlights the reason why X-bar charts and R-charts should be used together.  The X-bar chart was sufficient to spot the problem with sample 5.  The problem with sample 6, however, would have been missed if we had used the X-bar chart alone.  In the next section we will focus on constructing and interpreting X-bar charts.
 
 \section*{Practice Problems}
 
