@@ -309,9 +309,9 @@ One of the fundamental principles of statistical process control is that if a pr
 See if you can apply the Nelson rules in the following problem.
 
 \begin{problem}\label{prob:controlChartWithSlider}
-Suppose that a manufacturing process is known to have a normal distribution with a mean $\mu=3.5$, and standard deviation $\sigma=2$.  A random sample of size $n=4$ is collected every hour to monitor the manufacturing process.  The distribution of sample means (sampling distribution) will be normal and $$\mu_{\bar{x}}=\answer{3.5},\quad \sigma_{\bar{x}}=\answer{1}$$
+Suppose that a manufacturing process is known to have a normal distribution with a mean $\mu=3.5$, and standard deviation $\sigma=2$.  A random sample of size $n=4$ is collected every hour to monitor the manufacturing process.  The distribution of sample means (sampling distribution) will be normal and $$\mu_{\bar{X}}=\answer{3.5},\quad \sigma_{\bar{X}}=\answer{1}$$
 
-Determine upper and lower control limits ($\pm 3\sigma$), for the $\bar{X}$-control chart for this manufacturing process.
+Determine upper and lower control limits ($\pm 3\sigma_{\bar{X}}$), for the $\bar{X}$-control chart for this manufacturing process.
 
 $$LCL=\answer{0.5},\quad UCL=\answer{6.5}$$
 
@@ -323,73 +323,98 @@ The GeoGebra interactive below shows the means of consecutive samples $1$ throug
 \end{center}
 \end{onlineOnly}
 
-What can you say about Samples  1-6:
+What can you say about Samples  1-3:
 \begin{multipleChoice}
-    \choice{Everything looks good, keep the process going.}
-    \choice{A point is above or below one of the control limits.}
-    \choice[correct]{Two out of three consecutive points are in Zone 3.}
-    \choice{Four out of five consecutive points are in Zone 2.}
-    \choice{Eight consecutive points are on the same side of the center line.}
-    \choice{Rising or falling pattern is exhibited by seven consecutive points.}
+    \choice[correct]{Everything looks good, keep the process going.}
+    \choice{Stop the process due to Rule 1.}
+    \choice{Stop the process due to Rule 2.}
+    \choice{Stop the process due to Rule 3.}
+    \choice{Stop the process due to Rule 4.}
+    \choice{Stop the process due to Rule 5.}
+    \choice{Stop the process due to Rule 6.}
+    \choice{Stop the process due to Rule 7.}
+    \choice{Stop the process due to Rule 8.}
 \end{multipleChoice}
 
-What can you say about Samples  7-12:
+What can you say about Samples  4-7:
 \begin{multipleChoice}
     \choice{Everything looks good, keep the process going.}
-    \choice[correct]{A point is above or below one of the control limits.}
-    \choice{Two out of three consecutive points are in Zone 3.}
-    \choice{Four out of five consecutive points are in Zone 2.}
-    \choice{Eight consecutive points are on the same side of the center line.}
-    \choice{Rising or falling pattern is exhibited by seven consecutive points.}
+    \choice{Stop the process due to Rule 1.}
+    \choice[correct]{Stop the process due to Rule 2.}
+    \choice{Stop the process due to Rule 3.}
+    \choice{Stop the process due to Rule 4.}
+    \choice{Stop the process due to Rule 5.}
+    \choice{Stop the process due to Rule 6.}
+    \choice{Stop the process due to Rule 7.}
+    \choice{Stop the process due to Rule 8.}
 \end{multipleChoice}
 
-What can you say about Samples  13-17:
+What can you say about Samples  8-10:
 \begin{multipleChoice}
     \choice{Everything looks good, keep the process going.}
-    \choice{A point is above or below one of the control limits.}
-    \choice{Two out of three consecutive points are in Zone 3.}
-    \choice[correct]{Four out of five consecutive points are in Zone 2.}
-    \choice{Eight consecutive points are on the same side of the center line.}
-    \choice{Rising or falling pattern is exhibited by seven consecutive points.}
+    \choice[correct]{Stop the process due to Rule 1.}
+    \choice{Stop the process due to Rule 2.}
+    \choice{Stop the process due to Rule 3.}
+    \choice{Stop the process due to Rule 4.}
+    \choice{Stop the process due to Rule 5.}
+    \choice{Stop the process due to Rule 6.}
+    \choice{Stop the process due to Rule 7.}
+    \choice{Stop the process due to Rule 8.}
 \end{multipleChoice}
 
-What can you say about Samples  18-25:
+What can you say about Samples  11-20:
 \begin{multipleChoice}
     \choice{Everything looks good, keep the process going.}
-    \choice{A point is above or below one of the control limits.}
-    \choice{Two out of three consecutive points are in Zone 3.}
-    \choice{Four out of five consecutive points are in Zone 2.}
-    \choice[correct]{Eight consecutive points are on the same side of the center line.}
-    \choice{Rising or falling pattern is exhibited by seven consecutive points.}
+    \choice{Stop the process due to Rule 1.}
+    \choice{Stop the process due to Rule 2.}
+    \choice{Stop the process due to Rule 3.}
+    \choice[correct]{Stop the process due to Rule 4.}
+    \choice{Stop the process due to Rule 5.}
+    \choice{Stop the process due to Rule 6.}
+    \choice{Stop the process due to Rule 7.}
+    \choice{Stop the process due to Rule 8.}
 \end{multipleChoice}
 
-What can you say about Samples  26-32:
+What can you say about Samples  21-32:
 \begin{multipleChoice}
     \choice{Everything looks good, keep the process going.}
-    \choice{A point is above or below one of the control limits.}
-    \choice{Two out of three consecutive points are in Zone 3.}
-    \choice{Four out of five consecutive points are in Zone 2.}
-    \choice{Eight consecutive points are on the same side of the center line.}
-    \choice[correct]{Rising or falling pattern is exhibited by seven consecutive points.}
+    \choice{Stop the process due to Rule 1.}
+    \choice{Stop the process due to Rule 2.}
+    \choice{Stop the process due to Rule 3.}
+    \choice{Stop the process due to Rule 4.}
+    \choice[correct]{Stop the process due to Rule 5.}
+    \choice{Stop the process due to Rule 6.}
+    \choice{Stop the process due to Rule 7.}
+    \choice{Stop the process due to Rule 8.}
 \end{multipleChoice}
 \end{problem}
 
 \subsection*{CASE STUDY: Thermoform production}
 
-We return now to the application of we began this section with, an application of control charts to thermoform production.
+We return now to the application that we began this section with, and apply control charts to the thermoform production example.
+Let's begin by determining the control limits for this example.  Recall that population mean and standard deviation were determined to be $\mu=34.75$ mm, and $\sigma=0.17$ mm.  
 
-Below we see an X-bar control chart constructed by computing the mean diameter of each sample of size $n=5$ we obtained.  Let's see how the Nelson rules may have helped us to reduce waste in this example.
+\begin{question}\label{quest:contLimTh}
+For samples of size 5, we have 
+$$\mu_{\bar{X}}=\answer{34.75}\mbox{ mm}$$
+$$\sigma_{\bar{X}}=\answer{0.076}\mbox{ mm. (Round to three decimal places)}$$
+Therefore,
+$$LCL=\answer[tolerance=0.01]{34.51}$$
+$$UCL=\answer[tolerance=0.01]{34.98}$$
+\end{question}
+
+Below we see an X-bar control chart constructed by computing the mean diameter of each sample of size $n=5$ we obtained earlier.  Individual measurements from each sample are shown in different color, sample means are shown in black. Let's see how the Nelson rules may have helped us to reduce waste in this example.
 
 \desmos{f1piwpyfuh}{800}{600}
 
-\textbf{HOLD EVERYTHING!!!}  The very first sample mean of 34.51 mm is more than three sample standard deviations from the population mean, so it is below the LCL.  We observe $34.75 - 3(0.076)=34.522>34.51$.  Following Nelson Rule 1, we halt production and inspect, correcting anything that may seem to be wrong.  Finding nothing out of the ordinary, we resume production.
+\textbf{HOLD EVERYTHING!!!}  The very first sample mean of 34.51 mm is more than three standard deviations ($\sigma_{\bar{X}}$) from the population mean, so it is below the LCL.  %We observe $34.75 - 3(0.076)=34.522>34.51$.  
+Following Nelson Rule 1, we halt production and inspect, correcting anything that may seem to be wrong.  Then we resume production.
 
-\textbf{WAIT A MINUTE!!!}  Our ninth sample mean is more than three standard deviations above the center line $\mu=34.75$ mm.  We should stop and inspect the process.
+\textbf{WAIT A MINUTE!!!}  Our ninth sample mean is more than three standard deviations above the center line $\mu_{\bar{X}}=34.75$ mm.  We should stop and inspect the process.
 
-\textbf{THIS PROCESS SEEMS OUT OF CONTROL!!!}  Our tenth sample mean is also more than three standard deviations above the center line $\mu=34.75$ mm.  We should stop and inspect the process, and take corrective action.
+\textbf{THIS PROCESS SEEMS OUT OF CONTROL!!!}  Our tenth sample mean is also more than three standard deviations above the center line.  We should stop and inspect the process, and take corrective action.
 
 The point here is that by following the Nelson rules, we would investigate during the first hour of production and again after 9 or 10 hours.  Hopefully this would provide us ample opportunity to inspect and make modifications to the process before continuing, so that the diameters don't continue to grow to the point where they are unusable.
-
 
 \section*{Practice Problems}
 
