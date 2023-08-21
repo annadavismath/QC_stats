@@ -275,7 +275,7 @@ At this point you should have an idea of how the histogram needs to be positione
     \end{selectAll}
 \end{question}
 
-We will now quantify your observations in Question \ref{prob:specs1}.
+We will now quantify your observations in Question \ref{prob:specs1}.  The \emph{process potential} ($Cp$) and \emph{process capability} ($Cpk$) formulas below use ratios to allow us to numerically assess the width of the bell curve and its location in relation to the spec limits.  Process potential and process capability are the two primary indicators for process capability.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
@@ -316,13 +316,34 @@ We will now quantify your observations in Question \ref{prob:specs1}.
         \end{tikzpicture}
 \end{center}
 
-\begin{formula}\label{form:Cp}
+Given the process's standard deviation, $\sigma$, we know that $99.73\%$ of the data are located within three standard deviations of the mean.  In other words, $99.73\%$ of data lie along an interval of length $6\sigma$.  This length is sometimes referred to as \emph{process width}.
+
+\begin{formula}[Process Potential]\label{form:Cp}
 $$Cp=\frac{\text{Spec Width}}{6\sigma}=\frac{\text{Upper Spec Limit}-\text{Lower Spec Limit}}{6\sigma}$$
 \end{formula}
 
-\begin{formula}\label{form:Cpk}
+Examine the fractions in the above formula to answer the following questions.  (Hint: consider what happens when the numerator is greater than the denominator and vice versa.)
+
+ If the process width is narrower than the spec width, then $Cp$ is \wordChoice{\choice[correct]{greater than 1}, \choice{less than 1},\choice{equal to 1}}
+
+ If the process width is wider than the spec width, then $Cp$ is \wordChoice{\choice{greater than 1}, \choice[correct]{less than 1},\choice{equal to 1}}
+
+ If the process width is equal to the spec width, then $Cp$ is \wordChoice{\choice{greater than 1}, \choice{less than 1},\choice[correct]{equal to 1}}
+
+ Process potential tells us how wide our process distribution is, but it does not tell us where it is located in relation to the spec limits.  The next formula will take location into account.
+
+\begin{formula}[Process Capability]\label{form:Cpk}
 $$Cpk=\frac{\text{Distance from Mean to the nearest Spec Limit}}{3\sigma}$$
 \end{formula}
+
+Observe that both $Cp$ and $Cpk$ are unitless values.  This is because the units in the numerator and the denominator are the same and they cancel out.
+
+$Cp$ is an internal measure for a company to track how good a process can be while $Cpk$ is the value that a company sends to their customer along with the product shipment to indicate the level of product quality. If the process is centered within the specification limits, then $Cpk$ equals $Cp$.  
+
+The generally accepted minimum value for $Cp$ and $Cpk$ is $1.33$.  A centered process with a $Cp$ of $1.33$ results in about 66 parts per million defects.  A centered process with a Cp of 1.67 is less than one part per million defects. Many companies strive to achieve a centered process with a Cp of 2 which indicates .0018 parts per million.  This level of quality control is often considered zero defects. 
+In industry, avoiding scrap is critical. A defective part (scrap) can result in product failure. Product failure, at a minimum, leads to the loss of goodwill by the consumer and, at the worst case, can result in catastrophic failure leading to death.
+
+
 
 \begin{example}
     Given the following illustration of the process, find $Cp$ and $Cpk$.  What do the numbers tell us about the process?
