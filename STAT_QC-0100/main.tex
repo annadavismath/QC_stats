@@ -1,7 +1,7 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\author{D. Davis \and R. Speckert \and N. Shay \and A. Davis}
+\author{}
 \title{Measurement, and Data Representation} \license{CC BY-NC-SA 4.0}
 \begin{document}
 
@@ -22,7 +22,7 @@ $$\begin{array}{|c|c|c|}
  \end{array}$$
 
 \subsection*{Units}
-When collecting and recording data, be sure to always include the correct units.  Also, the units must make sense to the magnitude of the data.  For example, if you were to measure the width of the room in which you are seated, the most logical SI units would be meters and the most logical measuring device would be a meter stick or tape measure.  
+When collecting and recording data, be sure to always include the correct units.  The units must make sense in the context in which they are used.  For example, if you were to measure the width of a room, the most logical SI unit would be a meter, and the most logical measuring device would be a meter stick or tape measure.  
 Why not record the width of the room in millimeters?  
 Recording measurements in units that are logical helps with visualization of the actual size.  
 Also, know when the unit is linear, squared, or cubed.   Check these images (not to scale):
@@ -394,9 +394,18 @@ In the above interactive, specification limits stay fixed while the standard dev
 
 \subsection*{Accuracy and Precision}
 
-Let's generalize what we have learned about the spread of data compared to the specification limits.
+In manufacturing, a \emph{precise} process is one that is experiencing small variation. An \emph{accurate} process is one that is manufacturing products to the desired or target size. A process can be precise but not accurate. For example, the process might be misadjusted and consistently making parts too small (or too large) but with little variation.  Similarly, a process might be making parts close to the desired size but is not consistent in size from part to part.  The average of dimensions is an indicator of process accuracy while standard deviation is an indicator of precision. 
 
-If the histogram is well-centered within the specification limits, then the process is \emph{accurate}. That is, the process is making product that is close to the nominal or midpoint of the specification range.
+The following is a visual summary of accuracy and precision.
+
+\begin{center}
+        \begin{tikzpicture}
+\node[inner sep=0pt, anchor=base] (p1) at (0,0)
+  {\includegraphics[height=50mm]{target.jpg}};
+           \end{tikzpicture}
+      \end{center}
+
+Accuracy and precision can also be visualized using histograms, or graphs of distributions.  If the histogram is well-centered within the specification limits, then the process is \emph{accurate}. That is, the process is making product that is close to the nominal or midpoint of the specification range.
 
 If the spread of the data is as wide as the specification limits, then the data is not very \emph{precise}, and the process is likely to be making scrap.
 
