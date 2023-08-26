@@ -13,60 +13,70 @@
 \section*{Measurement, and Data Representation}
 \end{onlineOnly}
 \subsection*{Background}
-Units of measurement are used to represent physical quantities like length, area, volume, mass, temperature, current, voltage, intensity, etc.  There are different measurement units used to represent the magnitude of the physical quantities. The International System of Units (SI Units) are the most widely used across the world. Measurement units compare how large or small a physical quantity is as compared to the basic standard quantity.  
+Units of measurement are used to represent physical quantities like length, area, volume, mass, temperature, current, voltage, intensity, etc.  There are different measurement units used to represent the magnitude of the physical quantities. The International System of Units (SI Units) are the most widely used across the world. Measurement units compare how large or small a physical quantity is as compared to the basic standard quantity.  The table below lists some of the units we use to measure length. 
 
 $$\begin{array}{|c|c|c|} 
- \hline \text{Entity}&\text{Base Unit Name}&\text{Abbreviation}\\ \hline \text{Mass}&\text{kilogram}&\text{kg}\\  \text{Length}&\text{meter}&\text{m}\\
- \text{Time} &\text{second}&\text{s}\\
+ \hline \text{Unit Name}&\text{Abbreviation}&\text{Conversion}\\ \hline 
+ \text{meter}&\text{m}&1\text{m}\\
+ \text{centimeter} &\text{cm}&0.01\text{m}\\
+ \text{millimeter} &\text{mm}&0.001\text{m}=0.1\text{cm}\\
+ \text{micrometer or micron} &\mu\text{m}&0.000001\text{m}=0.001\text{mm}\\
   \hline 
  \end{array}$$
 
-\subsection*{Units}
-When collecting and recording data, be sure to always include the correct units.  The units must make sense in the context in which they are used.  For example, if you were to measure the width of a room, the most logical SI unit would be a meter, and the most logical measuring device would be a meter stick or tape measure.  
-Why not record the width of the room in millimeters?  
-Recording measurements in units that are logical helps with visualization of the actual size.  
-Also, know when the unit is linear, squared, or cubed.   Check these images (not to scale):
+% $$\begin{array}{|c|c|c|} 
+%  \hline \text{Entity}&\text{Base Unit Name}&\text{Abbreviation}\\ \hline \text{Mass}&\text{kilogram}&\text{kg}\\  \text{Length}&\text{meter}&\text{m}\\
+%  \text{Time} &\text{second}&\text{s}\\
+%   \hline 
+%  \end{array}$$
 
-\begin{center}
-\tdplotsetmaincoords{70}{130}
-	\begin{tikzpicture}[scale=0.6]
- \filldraw[white, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
-   \filldraw[white, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
-   \filldraw[white, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
-   \filldraw[white, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
-   \filldraw[white, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
-\draw[line width=1pt](0,0,2)--(4,0,2) ;
-\node[] at (1.2, -1.5, 0)   {Length: $1$ meter};
-     \end{tikzpicture}\quad\quad
-         \begin{tikzpicture}[scale=0.6]
-\filldraw[white, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
-   \filldraw[white, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
-   \filldraw[white, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
-   \filldraw[white, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
-   \filldraw[white, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;         
-\filldraw[gray, opacity=0.5] (0,0,2)--(0,4,2)--(4,4,2)--(4,0,2)--cycle;
-\node[] at (1.2, -1.5, 0)   {Area: $1\, \text{meter}^2$};
-	\end{tikzpicture}\quad\quad
-	\begin{tikzpicture}[scale=0.6]
-   \filldraw[gray, opacity=0.3](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
-   \filldraw[gray, opacity=0.3] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
-   \filldraw[gray, opacity=0.5] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
-   \filldraw[blue, opacity=0.3] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
-   \filldraw[yellow, opacity=0.6] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
-   \node[] at (1.5, -1.5, 0)   {Volume: $1\, \text{meter}^3$};
-\end{tikzpicture}
-%    \end{center}     
- \end{center}
+%\subsection*{Units}
+% When collecting and recording data, be sure to always include the correct units.  
+The units must make sense in the context in which they are used.  For example, if you were to measure the width of a room, the most logical SI unit would be a meter, and the most logical measuring device would be a meter stick or tape measure.  When measuring microscopic objects that cannot be detected with a naked eye, you would use microns.
+% Why not record the width of the room in millimeters?  
+% Recording measurements in units that are logical helps with visualization of the actual size.  
+% Also, know when the unit is linear, squared, or cubed.   Check these images (not to scale):
 
-\begin{question}\label{q:lengthAreaVolume}
-    For each example, select an appropriate type of measurement.
+% \begin{center}
+% \tdplotsetmaincoords{70}{130}
+% 	\begin{tikzpicture}[scale=0.6]
+%  \filldraw[white, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
+%    \filldraw[white, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
+%    \filldraw[white, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
+%    \filldraw[white, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
+%    \filldraw[white, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
+% \draw[line width=1pt](0,0,2)--(4,0,2) ;
+% \node[] at (1.2, -1.5, 0)   {Length: $1$ meter};
+%      \end{tikzpicture}\quad\quad
+%          \begin{tikzpicture}[scale=0.6]
+% \filldraw[white, opacity=1](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
+%    \filldraw[white, opacity=1] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
+%    \filldraw[white, opacity=1] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
+%    \filldraw[white, opacity=1] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
+%    \filldraw[white, opacity=1] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;         
+% \filldraw[gray, opacity=0.5] (0,0,2)--(0,4,2)--(4,4,2)--(4,0,2)--cycle;
+% \node[] at (1.2, -1.5, 0)   {Area: $1\, \text{meter}^2$};
+% 	\end{tikzpicture}\quad\quad
+% 	\begin{tikzpicture}[scale=0.6]
+%    \filldraw[gray, opacity=0.3](0,0,2)--(0,4,2)--(0,4,-2)--(0,0,-2)--cycle;
+%    \filldraw[gray, opacity=0.3] (4,0,2)--(0,0,2)--(0,0,-2)--(4,0,-2)--cycle;
+%    \filldraw[gray, opacity=0.5] (0,4,2)--(0,4,-2)--(4,4,-2)--(4,4,2)--cycle;
+%    \filldraw[blue, opacity=0.3] (4,4,2)--(4,4,-2)--(4,0,-2)--(4,0,2)--cycle;
+%    \filldraw[yellow, opacity=0.6] (0,4,2)--(4,4,2)--(4,0,2)--(0,0,2)--cycle;
+%    \node[] at (1.5, -1.5, 0)   {Volume: $1\, \text{meter}^3$};
+% \end{tikzpicture}
+% %    \end{center}     
+%  \end{center}
 
-    (a)	Vessels are filled with 560 milliliters of lubricant: \wordChoice{\choice{Length}, \choice{Area},\choice[correct]{Volume}}
+% \begin{question}\label{q:lengthAreaVolume}
+%     For each example, select an appropriate type of measurement.
 
-    (b)	A computer wire is 1200 millimeters: \wordChoice{\choice[correct]{Length}, \choice{Area},\choice{Volume}}
+%     (a)	Vessels are filled with 560 milliliters of lubricant: \wordChoice{\choice{Length}, \choice{Area},\choice[correct]{Volume}}
 
-    (c)	An optical storage disk is 110 square centimeters: \wordChoice{\choice{Length}, \choice[correct]{Area},\choice{Volume}}
-\end{question}
+%     (b)	A computer wire is 1200 millimeters: \wordChoice{\choice[correct]{Length}, \choice{Area},\choice{Volume}}
+
+%     (c)	An optical storage disk is 110 square centimeters: \wordChoice{\choice{Length}, \choice[correct]{Area},\choice{Volume}}
+% \end{question}
 
 \begin{warning}
 \begin{itemize}
@@ -75,17 +85,9 @@ Also, know when the unit is linear, squared, or cubed.   Check these images (not
 \end{itemize}
 \end{warning}
 
- \subsection*{Units Conversion}
+ 
 
- \begin{example}\label{ex:unitConversion}
-     Convert $575$cm to meters. 
-     \begin{explanation}
-     To do this, multiply $575$cm by a “strategic one”.  
-$$575\text{cm}\times \frac{1\text{m}}{100\text{cm}}=\frac{575\cancel{\text{cm}}}{100}\frac{\text{m}}{\cancel{\text{cm}}}=\answer{5.75}\text{m}$$
-     \end{explanation}
- \end{example}
-
- \subsection*{Measurement Process}
+ \subsection*{Measurement Process in a Manufacturing Setting}
  Technicians measure stuff.  It is important to report a measurement in a meaningful and reliable format.
 To do this, the technician must:
 \begin{itemize}
@@ -94,7 +96,7 @@ To do this, the technician must:
 \item Report  measurement accurately, to a meaningful level of precision, and with proper units.
 \end{itemize}
 
-Different circumstances require different instruments.  For example, when measuring the thickness of a metal layer resulting from a chemical vapor deposition (CVD), a technician would use a scanning electron microscope \href{https://www.nist.gov/news-events/news/2023/05/leveling-sem-measurements-chip-manufacturing}{(SEM)}.  
+Different circumstances require different instruments and units.  For example, the thickness of a metal layer resulting from a chemical vapor deposition (CVD) is measured in microns.  A technician would use a scanning electron microscope \href{https://www.nist.gov/news-events/news/2023/05/leveling-sem-measurements-chip-manufacturing}{(SEM)} to measure the thickness.
 
 \begin{center}
         \begin{tikzpicture}
@@ -105,7 +107,7 @@ Different circumstances require different instruments.  For example, when measur
 
 A SEM is a high precision, delicate instrument that requires training on how to use, care for, and calibrate the device. Many other measuring instruments are used in manufacturing including micrometers, calipers, hardness and surface testers, gauges, and more. 
 
-The \emph{accuracy} of a measuring instrument is the ability to yield the true or correct value, and the \emph{precision} is the ability to repeat values with small variation. For measuring instruments to be accurate and precise, they must be used correctly, handled and cared for properly, and calibrated. 
+The \emph{accuracy} of a measuring instrument is the ability to yield the true or correct value.  The \emph{precision} is the ability to repeat values with small variation. For measuring instruments to be accurate and precise, they must be used correctly, handled and cared for properly, and calibrated. 
 
 Calibration of measuring instruments is crucial to the measurement process. The calibration requirements vary by instrument and applications. Sometimes calibration might be as simple as checking or zeroing the instrument, while some instruments used in critical measurement processes may require periodic calibration using standards or transfer standards from the National Institute for Science and Technology (NIST).
     
@@ -134,42 +136,56 @@ When a dental technician is making a dental implant, she is most likely working 
 \end{multipleChoice} 
 \end{question}
 
+\subsection*{Units Conversion}
+
+ \begin{example}\label{ex:unitConversion}
+     Convert $575$cm to meters. 
+     \begin{explanation}
+     To do this, multiply $575$cm by a “strategic one”.  
+$$575\text{cm}\times \frac{1\text{m}}{100\text{cm}}=\frac{575\cancel{\text{cm}}}{100}\frac{\text{m}}{\cancel{\text{cm}}}=\answer{5.75}\text{m}$$
+     \end{explanation}
+ \end{example}
+
 \subsection*{Visualizing Manufacturing Data}
 
-When manufacturing a large quantity of a particular part, it is important to collect and analyze measurements for quality control purposes.  For example, we may need to keep track of the average diameter of washers produced by a certain machine.  Individual diameters of a large number of washers may be collected to establish a baseline population mean.  This gives us a list of data.  This list is then taken to a quality control room or office, where the data are entered into a spreadsheet for analysis. The spreadsheet is a tool that helps the data analyst to gather information about the process. In addition to computing the mean, we can learn a lot about the manufacturing process by looking at a histogram.  
+When manufacturing a large quantity of a particular part, it is important to collect and analyze measurements for quality control purposes.  For example, we may need to keep track of the average diameter of washers produced by a certain machine.  Individual diameters of a large number of washers may be collected to establish a baseline population mean.  This gives us a list of data.  These data are entered into a spreadsheet for analysis. The spreadsheet is a tool that helps the data analyst to gather information about the process. In addition to computing the mean, we can learn a lot about the manufacturing process by looking at a histogram.  
 
-We will start with the shape of the histogram.  This is a crude, subjective assessment of the histogram but can be a useful indicator.  If the histogram is normally distributed, then the process is experiencing only \emph{common} or \emph{natural causes of variation}. This type of variation is inherent in the process and not easy to reduce.  
+We will start with the shape of the histogram.  This is a crude, subjective assessment of the histogram but can be a useful indicator.  Generally speaking, measurements associated with manufactured parts (e.g. washer diameters) produced by an in-control process are normally distributed.  If the histogram approximately follows the normal distribution, then the process is experiencing only \emph{common} or \emph{natural causes of variation}. This type of variation is inherent in any manufacturing process and is not easy to reduce.  
 
-If the histogram is not normally distributed, then the process is likely experiencing \emph{assignable causes of variation}.  Assignable causes of variation are unwanted issues that surface periodically and can normally be eliminated on the shop floor by machine operators.  Examples of assignable causes include operator fatigue, change in the quality of raw materials, equipment wear, drastic change in the manufacturing environment such as a drastic change in temperature or humidity.
+If the histogram does not follow the normal distribution, then the process is likely experiencing \emph{assignable causes of variation}.  Assignable causes of variation are unwanted issues that surface periodically and can typically be eliminated on the shop floor by machine operators.  Examples of assignable causes include operator fatigue, change in the quality of raw materials, equipment wear, drastic change in the manufacturing environment such as a drastic change in temperature or humidity.
 
-\begin{exploration}\label{exp:histogram1}
-Consider a sample of 100 silicon wafers whose thickness of a metal layer resulting from a chemical vapor deposition (CVD) in a semiconductor plant. 
+\begin{example}\label{ex:histogram1}
+% Consider a sample of 100 silicon wafers whose thickness of a metal layer resulting from a chemical vapor deposition (CVD) in a semiconductor plant. 
 
-\begin{center}
-        \begin{tikzpicture}
-\node[inner sep=0pt, anchor=base] (p1) at (0,0)
-  {\includegraphics[height=40mm]{200mmWafer.png}};
-           \end{tikzpicture}
-      \end{center}
+% \begin{center}
+%         \begin{tikzpicture}
+% \node[inner sep=0pt, anchor=base] (p1) at (0,0)
+%   {\includegraphics[height=40mm]{200mmWafer.png}};
+%            \end{tikzpicture}
+%       \end{center}
 
+Each of the histograms below was constructed using hypothetical thickness of a metal layer resulting from a chemical vapor deposition.  We will examine the shape of each histogram and discuss how this shape relates to what might be happening in the production process.
 
-The data represent the layer thickness on semiconductor wafers measured in angstroms (one ten billionth of a meter).
+\begin{itemize}
+    \item We can see by the histogram output that the data has the triangular shape and symmetry associated with the bell shape. We can say that this sample data are normally distributed.  This shape does not raise any red flags about the process.
 
+    \item This histogram is skewed to the \wordChoice{\choice{left}[correct]\choice{right}\choice{center}}.  This behavior typically signals the presence of assignable causes of variation.  Such causes need to be identified and addressed.
 
-CLICK on the SLIDER to change the number of buckets (bars).
+    \item This histogram shows a bimodal distribution.  One possible cause of such an occurrence is that measurements from two different machines were combined into a single data set.  Each machine on it's own might have produced normally distributed data, but the two machines are poorly calibrated, so the combined data set looks like two bell curves that do not quite match.  The discrepancy between the two machines may need to be addressed.
+\end{itemize}
 
-\begin{onlineOnly}
-\begin{center} 
-\geogebra{dhvgryen}{800}{600} 
-\end{center}
-\end{onlineOnly}
-
-We can see by the histogram output that the data has the triangular shape and symmetry associated with the bell shape. We can say that this sample data is normally distributed.
-
-I'm including this wafer pic just for fun:
+% The data represent the layer thickness on semiconductor wafers measured in angstroms (one ten billionth of a meter).
 
 
-\end{exploration}
+% CLICK on the SLIDER to change the number of buckets (bars).
+
+% \begin{onlineOnly}
+% \begin{center} 
+% \geogebra{dhvgryen}{800}{600} 
+% \end{center}
+% \end{onlineOnly}
+
+\end{example}
 
 \subsection*{Specification Limits}
 Manufactured parts typically have to fit with many other parts, so their measurements matter. Due to natural variation inherent in all manufacturing processes we cannot require a part to have a specific exact measurement.  Instead, we require that the measurement falls within a certain acceptable range based on practical restrictions on how big or small a part can be and still fit with the other parts.  Such restrictions are called \emph{specification limits} or \emph{specs}.  The diagram below shows the specification limits for the length of a screw.  The \emph{lower specification limit} (LSL) is the shortest length a screw can be to hold two planks of wood together; the \emph{upper specification limit} (USL) is the longest length a screw can be without sticking out on the other side and potentially causing injury.
@@ -181,7 +197,7 @@ Manufactured parts typically have to fit with many other parts, so their measure
            \end{tikzpicture}
       \end{center}
 
-If a part's measurement falls outside of the specification limits, the part is considered to be \emph{defective} or \emph{scrap}.  For example, we may order a batch of $50$ mm screws with specifications of $50$mm $\pm 6$mm.   Given these specs, a $52$mm screw is okay, but a $43$mm screw is scrap.
+If a part's measurement falls outside of the specification limits, the part is considered to be \emph{defective} or \emph{scrap}.  For example, we may order a batch of $50$mm screws with specifications of $50$mm $\pm 6$mm.   Given these specs, a $52$mm screw is okay, but a $43$mm screw is scrap.
 
 \subsection*{Evaluating Process Quality}
 We will start by visualizing the output of two different machines engaged in manufacturing screws from our earlier discussion.  Recall that we set the specs for screw length to be $50$mm $\pm 6$mm.  
@@ -199,17 +215,50 @@ Use the check boxes in the GeoGebra interactive below to view the data from Mach
     \begin{selectAll}
         \choice[correct]{The means for the two machines are approximately the same.}
         \choice{The standard deviations for the two machines are approximately the same.}
+        \choice{Only the means can be estimated from the graph.  We cannot compare standard deviations.}
         \choice{The standard deviation is smaller for Machine 1}
         \choice[correct]{The standard deviation is greater for Machine 1}
-        \choice{Only the means can be estimated from the graph.  We cannot compare standard deviations.}
-    \end{selectAll}
+            \end{selectAll}
 \end{question}
 
 The data in the GeoGebra interactive above shows that the output from both machines falls within the specification limits.  In other words, neither machine has produced scrap.  However, the number of data points used to construct these histograms is relatively small -- only 100 data points were collected from each machine.  Given that Machine 1 came very close to spilling outside the spec limits, it is very likely that manufacturing $1,000,000$ screws using Machine 1 would result in a number of defective screws.  Machine 2 appears to be less likely to produce scrap than Machine 1.  In the next example, we use the Empirical Rule to estimate the amount of scrap produced by Machine 1.    
 
 \begin{example}\label{ex:defParts1}
-    Suppose that the output of Machine 1 can be described using a normal distribution with mean $\mu=50$ and standard deviation $\sigma=2$.  If a batch of $1,000,000$ is ordered, how many defective screws do you expect?
+    Suppose that the output of Machine 1 can be described using a normal distribution with mean $\mu=50$mm and standard deviation $\sigma=2$mm.  If a batch of $1,000,000$ is ordered, how many defective screws do you expect?
     \begin{explanation}
+    Recall that the \href{https://en.wikipedia.org/wiki/68%E2%80%9395%E2%80%9399.7_rule}{Empirical rule} tells us that $99.73\%$ of normally distributed data fall within three standard deviations of the mean.
+
+\begin{center}
+\begin{tikzpicture}[scale=1.5]
+        \begin{axis}[
+          domain=-4:4,
+          xmin=-4, xmax=4,
+          ymin=-0.3, ymax=0.7,
+          width=3.5in,
+          xtick={-3,-2,-1,0,1,2,3},
+            xticklabels={$44$,,,$\mu=50$,,,$56$},
+            axis x line=center,
+            axis y line=none,
+            every axis x label/.style={at=(current axis.right of origin),anchor=west},
+          ]
+      \addplot [very thick,  smooth] {(e^(-0.5*(x)^2))/((2*pi)^0.5)};
+      \draw [dashed] (0,0) -- (0,0.5);
+      \node[] at (0,-0.14)   {$\sigma=2$};
+      \draw [dashed] (-3,0) -- (-3,0.6);
+      \draw [dashed] (3,0) -- (3,0.6);
+      \draw[line width=0.5pt, stealth-](0,0.45)--(1,0.45);
+       \draw[line width=0.5pt, stealth-](3,0.45)--(1,0.45);
+     \draw[line width=0.5pt, stealth-](0,0.45)--(-1,0.45);
+       \draw[line width=0.5pt, stealth-](-3,0.45)--(-1,0.45);
+      \node[] at (1.5,0.48)   {$3\sigma$};
+      \node[] at (-1.5,0.48)   {$3\sigma$};
+      \draw[line width=0.5pt, stealth-](-3,0.55)--(0,0.55);
+      \draw[line width=0.5pt, stealth-](3,0.55)--(0,0.55);
+      \node[] at (0,0.58)   {$99.73\%$};
+      \end{axis}
+        \end{tikzpicture}
+\end{center}
+    
         Observe that $50-3\sigma=44$ and $50+3\sigma=56$.  By the Empirical Rule, $99.73\%$ of the data lies between $44$ and $56$.  The end-points of this interval just happen to coincide with the spec limits.  In other words, the spec limits are located at $\pm 3\sigma$ away from the mean.  Therefore, $99.73\%=0.9973$ of output falls within the spec limits.  This may seem like a good thing, but if we fill an order of $1,000,000$ parts using Machine 1, then the number of defective screws will be approximately
         $$(1-0.9973)\times 1,000,000=0.0027\times 1,000,000=2,700$$       
     \end{explanation}
@@ -243,7 +292,7 @@ Compare your answer to this question with Example \ref{ex:defParts1}.  Which of 
     \end{multipleChoice}
     \end{question}
 
-Process mean and standard deviation both affect the amount of scrap produced by the process.  The Desmos interactive below allows you to visualize the number of defective parts that result from a normally distributed processes with various means and standard deviations.  Use the slider on the left to change the mean and standard deviation of the distribution and observe how the number of defective parts changes.
+Process mean and standard deviation both affect the amount of scrap produced by the process.  The Desmos interactive below allows you to visualize the number of defective parts that result from a normally distributed processes with various means and standard deviations.  Use the sliders on the left to change the mean and standard deviation of the distribution and observe how the number of defective parts changes.
 
 \begin{onlineOnly}
 \begin{center} 
@@ -262,16 +311,17 @@ Process mean and standard deviation both affect the amount of scrap produced by 
 \end{question}
 
 \subsection*{Process Capability and Quality Standards}
+At this point you should have an idea of how the histogram needs to be positioned in relation to the spec limits in order to minimize scrap.  Let's summarize these characteristics.  
 \begin{question}\label{prob:specs1}
-At this point you should have an idea of how the histogram needs to be positioned in relation to the spec limits in order to minimize scrap.  Let's summarize these characteristics.  To reduce the number of defective parts the most desirable conditions are (select TWO).
+Select a combination of TWO conditions that will result in the smallest amount of scrap.
 
     \begin{selectAll}
         \choice[correct]{data are centered between the spec limits}
         \choice{data are shifted to the low side}
         \choice{data are shifted to the high side}
-        \choice[correct]{the data spread is narrower than the specification limits}
-        \choice{the data are spread from the lower spec limit to the upper, but does not spill over.}
-        \choice{the data spread is wider than the specification limits.}
+        \choice[correct]{process width is narrower than the spec width.}
+        \choice{process width is the same as spec width.}
+        \choice{process width is greater than spec width.}
     \end{selectAll}
 \end{question}
 
@@ -295,23 +345,27 @@ We will now quantify your observations in Question \ref{prob:specs1}.  The \emph
            every axis x label/.style={at=(current axis.right of origin),anchor=west},
           ]
       \addplot [very thick,  smooth] {(e^(-0.5*((x-300)/2.5)^2))/(((2*pi)^0.5)*2.5)};
-      \draw [dashed] (300,-0.04) -- (300,0.18);
+      \draw [dashed] (300,-0.04) -- (300,0.15);
       \draw [dashed] (286,-0.08) -- (286,0.2);
       \draw [dashed] (318,-0.08) -- (318,0.2);
-      \draw [dashed] (292.5,0) -- (292.5,-0.04);
-      \draw [dashed] (307.5,0) -- (307.5,-0.04);
+      \draw [dashed] (292.5,0.2) -- (292.5,-0.04);
+      \draw [dashed] (307.5,0.2) -- (307.5,-0.04);
       \node[rotate=90] at (285,0.1)   {Lower Spec Limit};
       \node[rotate=90] at (319,0.1)   {Upper Spec Limit};
-      \draw[line width=1pt, stealth-](300,-0.02)--(305.5,-0.02);
-      \draw[line width=1pt, stealth-](307.5,-0.02)--(305.5,-0.02);
-      \draw[line width=1pt, stealth-](300,-0.02)--(295.5,-0.02);
-      \draw[line width=1pt, -stealth](295.5,-0.02)--(292.5,-0.02);
+      \draw[line width=0.5pt, stealth-](300,-0.02)--(305.5,-0.02);
+      \draw[line width=0.5pt, stealth-](307.5,-0.02)--(305.5,-0.02);
+      \draw[line width=0.5pt, stealth-](300,-0.02)--(295.5,-0.02);
+      \draw[line width=0.5pt, -stealth](295.5,-0.02)--(292.5,-0.02);
       \node[] at (296.25,-0.035)   {$3\sigma$};
       \node[] at (304.25,-0.035)   {$3\sigma$};
-      \draw[line width=1pt, -stealth](300,-0.06)--(318,-0.06);
-      \draw[line width=1pt, -stealth](300,-0.06)--(286,-0.06);
+      \draw[line width=0.5pt, -stealth](300,-0.06)--(318,-0.06);
+      \draw[line width=0.5pt, -stealth](300,-0.06)--(286,-0.06);
        \node[] at (302,-0.075)   {Spec Width};
-       \node[] at (300,0.19)   {Mean};
+       \draw[line width=0.5pt, -stealth](300,0.175)--(307.5,0.175);
+      %\draw[line width=0.5pt, stealth-](307.5,0.18)--(305.5,0.18);
+      \draw[line width=0.5pt, -stealth](300,0.175)--(292.5,0.175);
+      %\draw[line width=0.5pt, -stealth](295.5,-0.02)--(292.5,-0.02);
+      \node[] at (300,0.19)   {Process Width};
           \end{axis}
         \end{tikzpicture}
 \end{center}
@@ -319,7 +373,7 @@ We will now quantify your observations in Question \ref{prob:specs1}.  The \emph
 Given the process's standard deviation, $\sigma$, we know that $99.73\%$ of the data are located within three standard deviations of the mean.  In other words, $99.73\%$ of data lie along an interval of length $6\sigma$.  This length is sometimes referred to as \emph{process width}.
 
 \begin{formula}[Process Potential]\label{form:Cp}
-$$Cp=\frac{\text{Spec Width}}{6\sigma}=\frac{\text{Upper Spec Limit}-\text{Lower Spec Limit}}{6\sigma}$$
+$$Cp=\frac{\text{Spec Width}}{\text{Process Width}}=\frac{\text{Upper Spec Limit}-\text{Lower Spec Limit}}{6\sigma}$$
 \end{formula}
 
 Examine the fractions in the above formula to answer the following questions.  (Hint: consider what happens when the numerator is greater than the denominator and vice versa.)
@@ -330,7 +384,7 @@ Examine the fractions in the above formula to answer the following questions.  (
 
  If the process width is equal to the spec width, then $Cp$ is \wordChoice{\choice{greater than 1}, \choice{less than 1},\choice[correct]{equal to 1}}
 
- Process potential tells us how wide our process distribution is, but it does not tell us where it is located in relation to the spec limits.  The next formula will take location into account.
+ Process potential ($Cp$) tells us how process width compares to spec width, but it does not tell us where the curve is located in relation to the spec limits.  The next formula will take location into account.
 
 \begin{formula}[Process Capability]\label{form:Cpk}
 $$Cpk=\frac{\text{Distance from Mean to the nearest Spec Limit}}{3\sigma}$$
@@ -340,10 +394,7 @@ Observe that both $Cp$ and $Cpk$ are unitless values.  This is because the units
 
 $Cp$ is an internal measure for a company to track how good a process can be while $Cpk$ is the value that a company sends to their customer along with the product shipment to indicate the level of product quality. If the process is centered within the specification limits, then $Cpk$ equals $Cp$.  
 
-The generally accepted minimum value for $Cp$ and $Cpk$ is $1.33$.  A centered process with a $Cp$ of $1.33$ results in about 66 parts per million defects.  A centered process with a $Cp$ of $1.67$ is less than one part per million defects. Many companies strive to achieve a centered process with a $Cp$ of 2 which indicates $.0018$ parts per million.  This level of quality control is often considered zero defects. 
-In industry, avoiding scrap is critical. A defective part (scrap) can result in product failure. Product failure, at a minimum, leads to the loss of goodwill by the consumer and, at the worst case, can result in catastrophic failure leading to death.
-
-
+The generally accepted minimum value for $Cp$ and $Cpk$ is $1.33$.  A centered process with a $Cp$ of $1.33$ results in about 66 parts per million defects.  A centered process with a $Cp$ of $1.67$ is less than one part per million defects. 
 
 \begin{example}
     Given the following illustration of the process, find $Cp$ and $Cpk$.  What do the numbers tell us about the process?
@@ -378,11 +429,10 @@ This value indicates that the bell curve is narrower than the spec width.  This 
 $$Cpk=\frac{211.8-211.6}{3(0.05)}=\frac{0.2}{0.15}\approx 1.33$$
 Unlike $Cp$, $Cpk$ takes the position of the curve within the spec limits into account.  In this case $Cp\neq Cpk$ because the bell curve is not centered between the spec limits.  We use the spec limit closest to the mean to compute $Cpk$.  This value is not as good as $Cp$, but it is still greater than 1.  
 \end{explanation}
-
 \end{example}
 
-
-% Different industries use different quality standards to minimize defects.  For example, the \emph{six-sigma} approach, introduced by Motorola in the late 1980s, requires that the mean is centered between the specification limits, and that specification limits are located at least six standard deviations away from the mean.  Use the slider to increase/decrease the standard deviation of the process depicted below and see when the process meets the six-sigma quality standard and when it does not.
+The following interactive allows you to change the process mean and standard deviation, and see how $Cp$ and $Cpk$ are computed.
+As you change the mean and standard deviation, specification limits stay fixed. This highlights the fact that there is no inherent relationship between the specs and the process.  Specification limits are dictated by real-life requirements and often cannot be altered.  Mean and standard deviation are characteristics of a particular process and its implementation.  Steps can be taken to center the mean and to reduce process width in order to reduce scrap.
 
 \begin{onlineOnly}
 \begin{center} 
@@ -390,7 +440,24 @@ Unlike $Cp$, $Cpk$ takes the position of the curve within the spec limits into a
 \end{center}
 \end{onlineOnly}
 
-In the above interactive, specification limits stay fixed while the standard deviation changes.  This highlights the fact that there is no inherent relationship between the specs and standard deviation.  Specification limits are dictated by real-life requirements and often cannot be altered.  Standard deviation is a characteristic of a particular process and its implementation.  Steps can be taken to reduce the standard deviation in order to adhere to the six-sigma standard.
+Many companies strive to achieve a centered process with a $Cp$ of 2 which results in $.0018$ defective parts per million.  This level of quality control is often considered zero defects. Use the interactive above to answer the following question.
+
+\begin{question}
+    Suppose a centered process has $Cp=2$.  Where are the spec limits located in relation to the mean?
+    \begin{multipleChoice}
+        \choice{The spec limits are at $\pm \sigma$.}
+        \choice{The spec limits are at $\pm 2\sigma$.}
+        \choice{The spec limits are at $\pm 3\sigma$.}
+        \choice{The spec limits are at $\pm 4\sigma$.}
+        \choice{The spec limits are at $\pm 5\sigma$.}
+        \choice[correct]{The spec limits are at $\pm 6\sigma$.}
+    \end{multipleChoice}
+
+An initiative to advance this level of quality was introduced by Motorala in the mid 1980s.  It became known as the \emph{six-sigma} quality standard.
+  \end{question}
+ 
+
+In industry, avoiding scrap is critical. A defective part (scrap) can result in product failure. Product failure, at a minimum, leads to the loss of goodwill by the consumer and, at the worst case, can result in catastrophic failure leading to death.
 
 \subsection*{Accuracy and Precision}
 
