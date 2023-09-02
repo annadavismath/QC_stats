@@ -14,7 +14,7 @@ Students simulate a manufacturing process by tearing paper into rectangles, perf
 \section*{Picture Perfect: A Data Collection Activity}
 \end{onlineOnly}
 
-\subsection*{Evaluating the Existing Process}
+\subsection*{Evaluating an Existing Process}
 
 Suppose you have been called in to evaluate the process of manufacturing small picture frames.  A picture frame typically consists of the frame, a piece of glass, and a fiberboard back that holds the picture in place. The photo below shows the kind of picture frame the shop manufactures. Note that the fiberboard back is held in place by metal tabs.  
 
@@ -63,8 +63,6 @@ How would you characterize the output from Machine 1? Check ALL that apply.
 \choice[correct]{The process is accurate}
 \choice{The process is precise}
 \choice[correct]{There is a lot of scrap}
-\choice{$Cp$>1}
-\choice[correct]{$Cp$<1}
 \end{selectAll}
 
 What can you say about $Cp$ for Machine 1?
@@ -272,15 +270,15 @@ Use the following questions as discussion prompts.  Your answers will vary, depe
 \item What is the advantage of drawing a picture of the data (histogram) compared to looking at a list of numbers?
 \item Using the histogram, do you estimate that the mean for your data is above the center line, below the center line or around the center line?  Check the ``Student Data Summary" checkbox to see your data summary.  How does your guess based on the histogram compare to what the numbers tell you? 
 \item The histogram provides three pieces of information about the data. Comment on each of these as it relates to your data.
-    \begin{enumerate}
+    \begin{itemize}
 \item The pattern of the data. This is a crude, subjective assessment of the histogram but can be a useful indicator.  If the histogram is normally distributed, then the process is experiencing only common or natural causes of variation. If the histogram is not normally distributed, then the process is likely experiencing unwanted or assignable causes of variation.    
 \item The spread of the data compared to specification limits.  If the spread of the data is as wide (or wider) as the specification limits, then the data is not very precise, and the process is likely to be making scrap. Scrap occurs when a measured value is outside the specification limits.
 \item The position of the data compared to specification limits. If the histogram is well-centered within the specification limits, then the process is accurate. That is, the process is making product that is close to the nominal or midpoint of the specification range.
-    \end{enumerate}
+    \end{itemize}
 \end{enumerate}
 
 We sometimes need to quantify how far our data is away from the expected value.  To do this we use  the following formula.
-\begin{formula}
+\begin{formula}\label{form:percentError}
 $$\text{Percent error} = \frac{|\text{Measured Value} – \text{Expected Value}|}{\text{Expected Value}} \times 100\%$$
 \end{formula}
 
