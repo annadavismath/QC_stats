@@ -1,11 +1,12 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\author{D. Davis \and R. Speckert \and N. Shay \and A. Davis}
+\author{}
 \title{Picture Perfect} \license{CC BY-NC-SA 4.0}
 \begin{document}
 
 \begin{abstract}
+Students simulate a manufacturing process by tearing paper into rectangles, performing measurements, recording, and analyzing their data.
 \end{abstract}
 \maketitle
 
@@ -36,11 +37,11 @@ Upper Specification Limit (USL) $=\answer{13.25}\text{cm}$
 \end{question}
 
 \begin{question}\label{quest:qc150_2}
-    Consider the population of fiberboard backs.  The manufacturing process will naturally result in some variability in the length of the diagonal.  If everything is under control, the diagonal measurements will be normally distributed.  Use LSL and USL values from the previous problem to select the most appropriate target mean and standard deviation for the distribution of the diagonal lengths, if we want to adhere to the six-sigma quality standard.
+    Consider the population of fiberboard backs.  The manufacturing process will naturally result in some variability in the length of the diagonal.  If everything is under control, the diagonal measurements will be approximately normally distributed.  Use LSL and USL values from the previous problem to select the most appropriate target mean and standard deviation for the distribution of the diagonal lengths, if we want to have $Cp=Cpk=1.33$.
 
     \begin{multipleChoice}
-        \choice[correct]{$\mu=12.85$, $\sigma= 0.07$}
-        \choice{$\mu=12.85$, $\sigma= 0.1$}
+        \choice[correct]{$\mu=12.85$, $\sigma= 0.1$}
+        \choice{$\mu=12.85$, $\sigma= 0.15$}
         \choice{$\mu=12.85$, $\sigma= 0.4$}
         \choice{$\mu=12.85$, $\sigma= \pm 0.4$}
     \end{multipleChoice}
@@ -55,13 +56,23 @@ Enter the lower and upper spec limits for the diagonal measurements into the Geo
 \end{center}
 \end{onlineOnly}
 
+\begin{question}\label{quest:Mach1Mach2}
 How would you characterize the output from Machine 1? Check ALL that apply.
 
 \begin{selectAll}
 \choice[correct]{The process is accurate}
 \choice{The process is precise}
 \choice[correct]{There is a lot of scrap}
-\choice{The process meets the six-sigma quality standard}
+\choice{$Cp$>1}
+\choice[correct]{$Cp$<1}
+\end{selectAll}
+
+What can you say about $Cp$ for Machine 1?
+
+\begin{selectAll}
+\choice{$Cp>1$}
+\choice[correct]{$Cp<1$}
+\choice{$Cp=1$}
 \end{selectAll}
 
 How would you characterize the output from Machine 2? Check ALL that apply.
@@ -70,8 +81,19 @@ How would you characterize the output from Machine 2? Check ALL that apply.
 \choice{The process is accurate}
 \choice[correct]{The process is precise}
 \choice{There is a lot of scrap}
-\choice{The process meets the six-sigma quality standard}
 \end{selectAll}
+
+What can you say about $Cp$ and $Cpk$ for Machine 2?  Check ALL that apply.
+
+\begin{selectAll}
+\choice[correct]{$Cp>1$}
+\choice{$Cp<1$}
+\choice{$Cp=1$}
+\choice{$Cp=Cpk$}
+\choice[correct]{$Cp>Cpk$}
+\choice{$Cp<Cpk$}
+\end{selectAll}
+\end{question}
 
 \subsection*{Changing Fiberboard Suppliers}
 
@@ -124,25 +146,28 @@ The dimensions of the frame are given in centimeters, per customer request. Supp
     $$4.25\text{in}=4.25\text{in}\times \frac{2.54\text{cm}}{\text{in}}=\answer{10.795}\text{cm}$$
 \end{question}
 
-\subsubsection*{Data Collection Activity}
+\subsection*{Data Collection Activity}
 You will simulate this manufacturing process using $8.5$in $\times$ $11$in sheets of paper.
 
-Supplies needed:
+\textbf{Supplies needed:}
 \begin{itemize}
-\item 13 sheets of standard copier paper 21.59cm $\times$ 27.94cm (8.5in $\times$ 11in). The paper will be used in place of silicon sheets.
-\item 30.48cm (12-inch) ruler. Note that measurements will be recorded in cm.  \href{http://www.vendian.org/mncharity/dir3/paper_rulers/}{Here is a printable ruler.}  Select the first ruler in the list.
-\item A computer to enter data into a spreadsheet.
+\item A total of 16 or more sheets of standard copier paper 21.59cm $\times$ 27.94cm (8.5in $\times$ 11in) to be evenly distributed among groups of 2 - 4 students. The paper will be used in place of fiberboard.  
+\item Each group will need a 30.48cm (12-inch) ruler. Note that measurements will be recorded in cm.  \href{http://www.vendian.org/mncharity/dir3/paper_rulers/}{Here is a printable ruler.}  Select the first ruler in the list.
+\item Google Sheets spreadsheet that every group can access to enter data.  (Instructor needs to create and share an editable link with the class.)
 \end{itemize}
-Procedure:
+
+\textbf{Procedure:}
 \begin{enumerate}
-\item	Organize your group (3 students per group) to fulfill the customer's request.   The roles to be played in your group are:
+\item	Break up into small groups (2 - 4 students per group).    Group members will take on the following roles:
     \begin{itemize}
-\item A paper-folder and tearer
+\item A paper-folder
+\item A paper-tearer
 \item A measurer
 \item A data recorder 
 \item All students will serve as statistical analysts.
     \end{itemize}
-\item Follow the instructions for folding and tearing the paper in the diagram below.
+    
+\item Carefully fold and tear each sheet of paper as indicated by the dashed lines in the diagram below.
 
 \begin{center}
 \begin{tikzpicture}[scale=0.5]
@@ -166,8 +191,8 @@ Procedure:
 %  \draw[line width=1pt,gray, stealth-](19.5,-0.5)--(21,-0.5);
 % \draw[line width=1pt,gray, -stealth](23.75,-0.5)--(25,-0.5);
 
-\node[] at (5.5,9.5)   {\Large{Stage 1}};
-\node[] at (19,9.5)   {\Large{Stage 2}};
+\node[] at (5.5,9.5)   {\Large{Step 1}};
+\node[] at (19,9.5)   {\Large{Step 2}};
 \end{tikzpicture}
 
 \begin{tikzpicture}[scale=0.5]
@@ -203,21 +228,30 @@ Procedure:
 \draw[line width=1pt,gray, -stealth](21, 6)--(21, 7);
 \node[rotate=90, gray] at (21.5,4.9)   {4.25 in};
 
-\node[] at (5.75,10.5)   {\Large{Stage 3}};
-\node[] at (19,10.5)   {\Large{Stage 4}};
+\node[] at (5.75,10.5)   {\Large{Step 3}};
+\node[] at (19,10.5)   {\Large{Step 4}};
 \end{tikzpicture}
 \end{center}
-At the end of the process you will have eight small rectangles, as shown in Stage 4.
 
-\item Produce 104 units of product. 
-\item Carefully measure the diagonal dimension and record it to the nearest .01cm.
-\item Record your diagonal measurements in a spreadsheet of your choice.
-\item Prepare a histogram of diagonal measures in the GeoGebra window below by copying and pasting your data column into the ``Student Data" column in GeoGebra.  Label all axis and display the upper and lower specification limits. 
+At the end of the process you will have eight small rectangles for every sheet of paper, as shown in Step 4.  (If your class used a total of 16 pages, then a total of 104 rectangles should have been produced.  Larger classes may use more paper and produce more rectangles.)
+
+\item Carefully measure the diagonal of each rectangle in centimeters and record your measurement to the nearest half a millimeter.  (This means that a measurement that falls between 12.7 and 12.8 cm will get recorded as 12.75 cm.)
+\item Access the Google Sheets document through the link shared by your instructor and record your diagonal measurements.  The screenshot below shows what the Google Sheets set-up might look like.
+
+\begin{center}
+         \begin{tikzpicture}
+ \node[inner sep=0pt, anchor=base] (p1) at (0,0)
+   {\includegraphics[height=40mm]{classData1.jpg}};
+               \end{tikzpicture}
+       \end{center}
+
+\item The instructor should combine the data for the entire class by copying and pasting the data from every group into a single column.
+\item Students should copy and paste the column of class data from the previous step into column A of the GeoGebra interactive below. (Column A currently contains sample data that needs to be deleted.)  
 \end{enumerate}
 
 \begin{onlineOnly}
 \begin{center} 
-\geogebra{ajtk6jux}{950}{600} 
+\geogebra{vrdgwu5p}{950}{600} 
 \end{center}
 \end{onlineOnly}
 
@@ -231,37 +265,30 @@ At the end of the process you will have eight small rectangles, as shown in Stag
 %     You will be using centimeter rulers to measure the diagonals of the rectangles.  Let's convert the theoretical length of the diagonal to centimeters.  Use the 
 %     \end{question}
 
-Analysis/Discussion:
+\textbf{Analysis/Discussion:}
 
+Use the following questions as discussion prompts.  Your answers will vary, depending on the results of your production process.
 \begin{enumerate}
 \item What is the advantage of drawing a picture of the data (histogram) compared to looking at a list of numbers?
-\item Using only the list of measured values, what is your estimate of the average? Now using the histogram, what is your estimate of the average. Which method is easier to estimate the average? 
+\item Using the histogram, do you estimate that the mean for your data is above the center line, below the center line or around the center line?  Check the ``Student Data Summary" checkbox to see your data summary.  How does your guess based on the histogram compare to what the numbers tell you? 
 \item The histogram provides three pieces of information about the data. Comment on each of these as it relates to your data.
     \begin{enumerate}
-\item The spread of the data compared to specification limits.  If the spread of the data is as wide as the specification limits, then the data is not very precise, and the process is likely to be making scrap. Scrap is when a measured value is outside the specification limits.
+\item The pattern of the data. This is a crude, subjective assessment of the histogram but can be a useful indicator.  If the histogram is normally distributed, then the process is experiencing only common or natural causes of variation. If the histogram is not normally distributed, then the process is likely experiencing unwanted or assignable causes of variation.    
+\item The spread of the data compared to specification limits.  If the spread of the data is as wide (or wider) as the specification limits, then the data is not very precise, and the process is likely to be making scrap. Scrap occurs when a measured value is outside the specification limits.
 \item The position of the data compared to specification limits. If the histogram is well-centered within the specification limits, then the process is accurate. That is, the process is making product that is close to the nominal or midpoint of the specification range.
-\item The pattern of the data. This is a crude, subjective assessment of the histogram but can be a useful indicator.  If the histogram is normally distributed, then the process is experiencing only common or natural causes of variation. If the histogram is not normally distributed, then the process is likely experiencing unwanted or assignable causes of variation.
     \end{enumerate}
-\item What is the expected (calculated) value of the diagonal.
-\item What is the percent error of the average of your data compared to the expected value?  
-
-$$\text{Percent error} = \frac{|\text{Measured Value} – \text{Expected Value}|}{\text{Expected Value}} \times 100$$
 \end{enumerate}
-Do some research and discuss: 
 
-Precision
+We sometimes need to quantify how far our data is away from the expected value.  To do this we use  the following formula.
+\begin{formula}
+$$\text{Percent error} = \frac{|\text{Measured Value} – \text{Expected Value}|}{\text{Expected Value}} \times 100\%$$
+\end{formula}
 
-Accuracy
-
-Common or natural causes of variation
-
-Assignable Cause of Variation    
+In the case of the fiberboard backs, the expected value for the diagonal measurement is 12.85 cm.  What is the percent error of the average of your data compared to the expected value?  
 
 
 
-\section*{Practice Problems}
 
-\section*{References}
-Wafer photo credit: \textit{Processed 200 mm Si Wafer} by Goldenvu CC BY-SA 4.0.
+
 
 \end{document} 
