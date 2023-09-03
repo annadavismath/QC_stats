@@ -1,18 +1,28 @@
 \documentclass{ximera}
 \input{../preamble.tex}
 
-\author{Robert Kenney \and Paul Zachlin \and Nicholas Shay}
+\author{}
 \title{An Introduction to Control Charts} \license{CC BY-NC-SA 4.0}
 \begin{document}
 
 \begin{abstract}
-We explore an application to manufacturing of concepts related to the normal distribution.
+%We explore an application to manufacturing of concepts related to the normal distribution.
 \end{abstract}
 \maketitle
 
 \begin{onlineOnly}
 \section*{An Introduction to Control Charts}
 \end{onlineOnly}
+
+In \href{https://ximera.osu.edu/qcstats/QC_stats/STAT_QC-0100/main}{Measurement, and Data Representation} we looked at populations of measurements associated with manufacturing processes and used histograms to visualize these populations. 
+
+In general, continuous measurements resulting from manufacturing processes are normally distributed.  A histogram associated with an \emph{in-control} process remains stationary over time. In other words, the population does not exhibit significant changes in the spread or the mean, marking a process that is stable and predictable.
+
+Population parameters, such as the mean and standard deviation, are established over a period of time while the process appears to be in-control.  The process must continue to be monitored to ensure that it remains in-control.
+
+ Even a well-established process will likely deteriorate and become \emph{out-of-control} after a period of time.  This is due to wear and tear, personnel changes, changes in the quality of raw materials, and changes in the environment.  Therefore it is crucial to monitor the process through regular sampling.  Sample statistics can help us spot early signs of a shift in the mean (loss of accuracy), or a widening of the spread (loss of precision).  They can also point to the nature of non-random factors affecting product quality, such as cyclical fluctuations in temperature and humidity.
+
+ In this section we will look at how \emph{control charts} can help us track sample statistics over time and alert us to a process gone wrong, thereby allowing us to halt and fix the process before it starts producing scrap.
 
 \subsection*{Out of Control}
 
@@ -28,7 +38,7 @@ We explore an application to manufacturing of concepts related to the normal dis
 
 Variability is inherent in all manufacturing processes.  The first four samples are depicted to represent amounts close to 300 ml, and a reasonable amount of variation.  Samples 5 and 6 are designed to illustrate a process gone wrong.  If you compare samples 5 and 6 carefully, you will see that each sample points to a different kind of problem with the process.
 
-Samples are collected to gauge the current state of the process.  What does sample 5 indicate about the process?
+Samples are collected to gauge the current state of the process.  What does Sample 5 indicate about the process?
 
 \begin{multipleChoice}
 \choice{The process is no longer consistent.  Standard deviation is too high.}
@@ -36,33 +46,31 @@ Samples are collected to gauge the current state of the process.  What does samp
 \choice{The mean is much greater than 300 ml.}
 \end{multipleChoice}
 
-What does sample 6 indicate about the process?
+What does Sample 6 indicate about the process?
 
 \begin{multipleChoice}
 \choice[correct]{The process is no longer consistent.  Standard deviation is too high.}
 \choice{The mean is much less than 300 ml.}
 \choice{The mean is much greater than 300 ml.}
 \end{multipleChoice}
- 
-\end{exploration}
+ \end{exploration}
 
-Variation is a natural part of any manufacturing process.  
+Variation is a natural part of any manufacturing process, but what amount of variation is too much?  Samples 5 and 6 visually suggest that the process is out of control, statistical analysis will help us determine whether or not this is the case. 
 
-\emph{Natural cause variation} or \emph{common cause variation} is a result of interactions between people, equipment, method, material, and environment.  This variation is a result of the whole system, not assignable to a particular incident or part.  It may be reduced ONLY by changing the system.
+% \emph{Natural cause variation} or \emph{common cause variation} is a result of interactions between people, equipment, method, material, and environment.  This variation is a result of the whole system, not assignable to a particular incident or part.  It may be reduced ONLY by changing the system.
 
-\emph{Assignable cause variation} or \emph{special cause variation} is a result of a particular, assignable incident or process part. This type of variation may be easy to identify and fix with a ``tweak".
+% \emph{Assignable cause variation} or \emph{special cause variation} is a result of a particular, assignable incident or process part. This type of variation may be easy to identify and fix with a ``tweak".
 
-A process is said to be \emph{in-control}  
+% A process is said to be \emph{in-control}  
 
-\emph{out-of-control process} 
+% \emph{out-of-control process} 
 
-Samples 5 and 6 suggest that the process is out of control, statistical analysis will help us determine whether or not this is the case. 
 
 \subsection*{Something significant...}
 Let's take a look at the data corresponding to the graphic in Exploration \ref{exp:OJ}.  In the table below, individual volumes are listed for each sample along with numerical summaries.  You are familiar with the statistics sample mean ($\bar{x}$) as a measure of center and sample standard deviation ($s$) as a measure of spread.  Another measure of spread is the  \emph{range} of the sample, denoted by $R$.  The range is the difference between the largest and the smallest values in the sample.  
 $$R=\text{largest data point}-\text{smallest data point}$$
 
-Both range ($R$) and sample standard deviation ($s$) can be used to estimate population standard deviation ($\sigma$), but because the range takes into account only the two extreme values in the sample, it fails to capture many features of the spread that the standard deviation does.  For small samples ($n\leq 6$), either $R$ or $s$ can be used to estimate $\sigma$ with approximately the same efficiency.  As a result, when dealing with small samples, range is often preferred over standard deviation due to ease of computation. (Montgomery)
+Both range ($R$) and sample standard deviation ($s$) can be used to estimate population standard deviation ($\sigma$), but because the range takes into account only the two extreme values in the sample, it fails to capture features of the spread as the standard deviation does.  For small samples ($n\leq 6$), either $R$ or $s$ can be used to estimate $\sigma$ with approximately the same efficiency.  As a result, when dealing with small samples, range is often preferred over standard deviation due to ease of computation. (Montgomery)
 
 Compute $R$ for samples 3 and 6 and enter your answers in the cells provided.
 
@@ -103,7 +111,7 @@ Compute $R$ for samples 3 and 6 and enter your answers in the cells provided.
 \end{tabular}
 \end{center}
 
-Observe that sample mean for Sample 5 is considerably lower than the other sample means, and also lower than the presumed population mean ($\mu=300$).  Observe also that the volumes in Sample 6 are more spread out than the volumes in the other samples, as indicated by the magnitudes of $R$ and $s$.  Is this part of the natural variation inherent in any manufacturing process, or is this an indication that the process is no longer in control?  The following questions will guide you to the answer.
+Observe that the sample mean for Sample 5 is considerably lower than the other sample means, and also lower than the presumed population mean ($\mu=300$).  Observe also that the volumes in Sample 6 are more spread out than the volumes in the other samples, as indicated by the magnitudes of $R$ and $s$.  Is this part of the natural variation inherent in any manufacturing process, or is this an indication that the process is no longer in control?  The following questions will guide you to the answer.
 
 \begin{question}\label{quest:popBellCurve}
 Recall that this population is normally distributed with $\mu=300$ ml, and $\sigma=2$ ml.  
@@ -289,17 +297,17 @@ Now that we know what the sampling distribution should look like, let's take a l
 \end{center}
 \end{onlineOnly}
 
-Observe that all sample means, with the exception of sample 5, are located in the green zone near the center of the graph.  The green zone, also known as Zone 1, is located between $\mu_{\bar{X}} -\sigma_{\bar{X}}$ and $\mu_{\bar{X}}+\sigma_{\bar{X}}$.  From the Empirical Rule, we know that approximately $68\%$ of data are located in this zone. 
+Observe that all sample means, with the exception of Sample 5, are located in the green zone near the center of the graph.  The green zone, also known as Zone 1, is located between $\mu_{\bar{X}} -\sigma_{\bar{X}}$ and $\mu_{\bar{X}}+\sigma_{\bar{X}}$.  From the Empirical Rule, we know that approximately $68\%$ of data are located in this zone. 
 
-Sample 5 mean is located more than three standard deviations away from the mean.  From the Empirical Rule, we know that approximately $99.7\%$ of data are located within three standard deviations from the mean.  Therefore, the probability of sample 5, or a more extreme sample, occurring is very near zero.  What can this tell us?
+Sample 5 mean is located more than three standard deviations away from the mean.  From the Empirical Rule, we know that approximately $99.7\%$ of data are located within three standard deviations of the mean.  Therefore, the probability of Sample 5, or a more extreme sample, occurring is very near zero.  What can this tell us?
 
 \begin{idea}
-IF the process is under control ($\mu=300, \sigma=1$), then there is essentially ZERO chance of us getting a sample such as sample 5, or a more extreme sample.  Because such a sample DID occur, we conclude that the process must be out of control, and must be paused.
+IF the process is under control ($\mu=300, \sigma=1$), then there is essentially ZERO chance of us getting a sample such as Sample 5, or a more extreme sample.  Because such a sample DID occur, we conclude that the process must be out of control, and must be paused.
 \end{idea}
 
 \subsubsection*{Turning the normal distribution on its side}
 
-To monitor a process over time, we will mark times (or sample numbers) along the horizontal axis, and the relevant sample statistic on the vertical axis.  Just like we marked the green, yellow and the red zones under the bell curve in the diagram above, we will mark green, yellow and red zones (Zones 1, 2, 3) to help us identify the zone where each sample mean falls.  We can even mentally add a bell curve to help us visualize the situation, as shown for sample 1.
+To monitor a process over time, we will mark times (or sample numbers) along the horizontal axis, and the relevant sample statistic on the vertical axis.  Just like we marked the green, yellow and the red zones under the bell curve in the diagram above, we will mark green, yellow and red zones (Zones 1, 2, 3) to help us identify the zone where each sample mean falls.  We can even mentally add a bell curve to help us visualize the situation, as shown for Sample 1.
 
 \begin{onlineOnly}
 \begin{center}
@@ -312,9 +320,9 @@ The diagram above is an example of a \emph{Control Chart}.  Control charts are u
 The following is a list of some red flags that technicians look for in a control chart:
 \begin{itemize}
     \item A point outside of control limits (e.g. Sample 5).  Such a sample is highly unlikely if the process is functioning properly, and indicates that the process is out of control.
-    \item Cyclic patterns may point to environmental fluctuations (e.g. cooler temperatures at night and higher temperatures during the day) or operator fatigue.  Such patterns indicate a presense of non-random factors that need to be investigated.  
+    \item Cyclic patterns may point to environmental fluctuations (e.g. cooler temperatures at night and higher temperatures during the day), or operator fatigue.  Such patterns indicate a presence of non-random factors that need to be investigated.  
     \item A continuous upward/downward trend may indicate gradual equipment wear.
-    \item A sudden shift in the height of the points may indicate introduction of new workers or a change in raw materials.
+    \item A sudden shift in the height of the points signals a shift in the mean.  This may correspond to introduction of new workers or a change in raw materials.
 \end{itemize}
 This list will give rise to a set of rules for interpreting control charts in the next section.
 
@@ -333,7 +341,7 @@ Let's return to our juice bottle example to examine what the X-bar chart and the
             \end{tikzpicture}
        \end{center}
 
-This example highlights the reason why X-bar charts and R-charts should be used together.  The X-bar chart was sufficient to spot the problem with sample 5.  The problem with sample 6, however, would have been missed if we had used the X-bar chart alone.  In the next section we will focus on constructing and interpreting X-bar charts.
+This example highlights the reason why X-bar charts and R-charts should be used together.  The X-bar chart was sufficient to spot the problem with Sample 5.  The problem with Sample 6, however, would have been missed if we had used the X-bar chart alone.  In the next section we will focus on constructing and interpreting X-bar charts.
 
 \section*{Practice Problems}
 
