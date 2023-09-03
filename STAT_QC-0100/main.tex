@@ -21,6 +21,7 @@ $$\begin{array}{|c|c|c|}
  \text{centimeter} &\text{cm}&0.01\text{m}\\
  \text{millimeter} &\text{mm}&0.001\text{m}=0.1\text{cm}\\
  \text{micrometer or micron} &\mu\text{m}&0.000001\text{m}=0.001\text{mm}\\
+ \text{Angstrom} &\AA &0.0001\mu\text{m}\\
   \hline 
  \end{array}$$
 
@@ -185,15 +186,41 @@ If the histogram does not follow the normal distribution, then the process is li
 %            \end{tikzpicture}
 %       \end{center}
 
-Each of the histograms below was constructed using hypothetical thickness of a metal layer resulting from a chemical vapor deposition.  We will examine the shape of each histogram and discuss how this shape relates to what might be happening in the production process.
+Each of the histograms in this example was constructed using hypothetical measurements of the thickness of a metal layer resulting from a chemical vapor deposition.  We will examine the shape of each histogram and discuss how this shape relates to what might be happening in the production process.
 
-\begin{itemize}
-    \item We can see by the histogram output that the data has the triangular shape and symmetry associated with the bell shape. We can say that this sample data are normally distributed.  This shape does not raise any red flags about the process.
+Consider the first histogram:
 
-    \item This histogram is skewed to the \wordChoice{\choice{left}[correct]\choice{right}\choice{center}}.  This behavior typically signals the presence of assignable causes of variation.  Such causes need to be identified and addressed.
+\begin{center}
+        \begin{tikzpicture}
+\node[inner sep=0pt, anchor=base] (p1) at (0,0)
+  {\includegraphics[height=50mm]{symmetric.jpg}};
+           \end{tikzpicture}
+      \end{center}
 
-    \item This histogram shows a bimodal distribution.  One possible cause of such an occurrence is that measurements from two different machines were combined into a single data set.  Each machine on it's own might have produced normally distributed data, but the two machines are poorly calibrated, so the combined data set looks like two bell curves that do not quite match.  The discrepancy between the two machines may need to be addressed.
-\end{itemize}
+We can see by the histogram output that the data has the triangular shape and symmetry associated with the bell shape. We can say that this sample data are normally distributed.  This shape does not raise any red flags about the process.
+
+Next, consider the following histogram:
+
+\begin{center}
+        \begin{tikzpicture}
+\node[inner sep=0pt, anchor=base] (p1) at (0,0)
+  {\includegraphics[height=50mm]{skewedLeft.jpg}};
+           \end{tikzpicture}
+      \end{center}
+
+This histogram is skewed to the \wordChoice{\choice[correct]{left}\choice{right}\choice{center}}.  This behavior typically signals the presence of assignable causes of variation.  Such causes need to be identified and addressed.
+
+Our final histogram shows a bimodal distribution:  
+
+\begin{center}
+        \begin{tikzpicture}
+\node[inner sep=0pt, anchor=base] (p1) at (0,0)
+  {\includegraphics[height=50mm]{bimodal.jpg}};
+           \end{tikzpicture}
+      \end{center}
+
+One possible cause of such an occurrence is that measurements from two different machines were combined into a single data set.  Each machine on it's own might have produced normally distributed data, but the two machines are poorly calibrated, so the combined data set looks like two bell curves that do not quite match.  The discrepancy between the two machines may need to be addressed.
+
 
 % The data represent the layer thickness on semiconductor wafers measured in angstroms (one ten billionth of a meter).
 
