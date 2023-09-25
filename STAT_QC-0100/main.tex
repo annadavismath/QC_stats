@@ -112,10 +112,10 @@ The \emph{accuracy} of a measuring instrument is the ability to yield the true o
 
 Calibration of measuring instruments is crucial to the measurement process. The calibration requirements vary by instrument and applications. Sometimes calibration might be as simple as checking or zeroing the instrument, while some instruments used in critical measurement processes may require periodic calibration using standards or transfer standards from the National Institute for Science and Technology (NIST).
     
-The degree of precision in reporting a measurement is limited by the least precise measuring instrument used in the process. 
+The degree of precision in reporting a measurement is limited by the least precise measuring instrument used in the process.  Just like a chain is as strong as the weakest link, a measurement can be no more precise than the least precise measuring instruments used in the process. 
 
 \begin{question}\label{q:lengthOfRoom}
-\textbf{Class Discussion.} When measuring the width of the room you are in, suppose you used the balsa wood meter stick given to you at the local bank for opening a new account.  When you got near the wall, you pull out the engineer’s scale calibrated to millimeters and report the width of the room to the nearest millimeter.  Is that level of precision valid?  Discuss why or why not?   So how strong is a chain?  A chain is as strong as the weakest link just like a measurement can be no more precise than the least precise measuring instruments used in the process. 
+\textbf{Class Discussion.} When measuring the width of the room you are in, suppose you used the balsa wood meter stick given to you at the local bank for opening a new account.  When you got near the wall, you pull out the engineer’s scale calibrated to millimeters and report the width of the room to the nearest millimeter.  Is that level of precision valid?  Discuss why or why not?   
 \end{question}
 
 \begin{question}\label{q:equalLength}
@@ -186,7 +186,7 @@ If the histogram does not follow the normal distribution, then the process is li
 %            \end{tikzpicture}
 %       \end{center}
 
-Each of the histograms in this example was constructed using hypothetical measurements of the thickness of a metal layer resulting from a chemical vapor deposition.  We will examine the shape of each histogram and discuss how this shape relates to what might be happening in the production process.
+Each of the histograms in this example was constructed using hypothetical measurements of the thickness of a metal layer resulting from a \href{https://en.wikipedia.org/wiki/Chemical_vapor_deposition}{chemical vapor deposition}.  We will examine the shape of each histogram and discuss how this shape relates to what might be happening in the production process.
 
 Consider the first histogram:
 
@@ -349,7 +349,7 @@ Process mean and standard deviation both affect the amount of scrap produced by 
 \end{onlineOnly}
 
 \begin{question}\label{ex:defParts3}
-    Suppose that the output of Machine 2 can be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=1$.  If a batch of $1,000,000$ is ordered, how many defective screws do you expect?  Use the Desmos interactive above to find out.  Round your answer to three decimal places.
+    Suppose that the output of Machine 2 can be described using normal distribution with mean $\mu=50$ and standard deviation $\sigma=1$.  If a batch of $1,000,000$ is ordered, how many defective screws do you expect?  Use the Desmos interactive above to find out.  Round your answer to \fontbf{three decimal places}.
 
     Number of defective parts per million: $\answer{0.002}$ ppm.
 
@@ -361,7 +361,7 @@ Process mean and standard deviation both affect the amount of scrap produced by 
 \subsection*{Process Capability and Quality Standards}
 At this point you should have an idea of how the histogram needs to be positioned in relation to the spec limits in order to minimize scrap.  Let's summarize these characteristics.  
 \begin{question}\label{prob:specs1}
-Select a combination of TWO conditions that will result in the smallest amount of scrap.
+Select a combination of \textbf{two} conditions that will result in the smallest amount of scrap.
 
     \begin{selectAll}
         \choice[correct]{data are centered between the spec limits}
@@ -373,7 +373,7 @@ Select a combination of TWO conditions that will result in the smallest amount o
     \end{selectAll}
 \end{question}
 
-We will now quantify your observations in Question \ref{prob:specs1}.  The \emph{process potential} ($Cp$) and \emph{process capability} ($Cpk$) formulas below use ratios to allow us to numerically assess the width of the bell curve and its location in relation to the spec limits.  Process potential and process capability are the two primary indicators for process capability.
+We will now quantify your observations in Question \ref{prob:specs1}.  The \emph{process potential} ($Cp$) and \emph{process capability} ($Cpk$) formulas below use ratios to allow us to numerically assess the width of the bell curve and its location in relation to the spec limits.  %Process potential and process capability are the two primary indicators for process capability.
 
 \begin{center}
 \begin{tikzpicture}[scale=1.5]
